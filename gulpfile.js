@@ -168,7 +168,8 @@ function copyMainStyle (done) {
 
 // ZIP
 function zipper (done) {
-  const filename = `${name}-v${version}.zip`
+//   const filename = `${name}-v${version}.zip`
+  const filename = `${name}.zip`
 
   pump([
     src([
@@ -176,6 +177,7 @@ function zipper (done) {
       'locales/*.json',
       '*.hbs',
       'partials/**',
+      'podcast/**',
       'LICENSE',
       'package.json',
       'README.md',
@@ -186,6 +188,50 @@ function zipper (done) {
     zip(filename),
     dest('dist')
   ], handleError(done))
+}
+
+// TryGhost Admin
+const dotenv = require('dotenv')
+const path = require('path')
+const GhostAdminApi = require('@tryghost/admin-api')
+
+const ENV_FILE = path.join(__dirname, '.env')
+const env = dotenv.config({ path: ENV_FILE })
+
+async function deploy (done) {
+  try {
+    const url = process.env.GHOST_API_URL || env.parsed.GHOST_API_URL
+    console.log(url)
+    const adminApiKey = process.env.GHOST_ADMIN_API_KEY || env.parsed.GHOST_ADMIN_API_KEY
+    console.log(adminApiKey)
+    const themeName = process.env.THEME_NAME || require('./package.json').name
+    console.log('name =', themeName)
+    const apiVersion = process.env.API_VERSION || require('./package.json').engines['ghost-api']
+    console.log(apiVersion)
+    // const zipFile = `./dist/${themeName}-v${version}.zip`
+    const zipFile = `./dist/${themeName}.zip`
+    console.log('zip = ', zipFile)
+
+    const api = new GhostAdminApi({
+      url,
+      key: adminApiKey,
+      version: apiVersion
+    })
+
+    await api.themes.upload({ file: zipFile }).then(response => console.log(response)).catch(error => console.error(error))
+    console.log('uploaded')
+    // console.log(`${themeName}-${version}`);
+    // const blah = `${themeName}-${version}`;
+    // console.log(blah);
+    // await api.themes.activate('simply-v0.4.0').then(response => console.log(response)).catch(error => console.error(error))
+    await api.themes.activate(`${themeName}`).then(response => console.log(response)).catch(error => console.error(error))
+    console.log('activated')
+
+    done()
+  } catch (err) {
+    console.log('error caught')
+    handleError(done)
+  }
 }
 
 const cssWatcher = () => watch('src/css/**', styles)
@@ -202,4 +248,4 @@ const production = series(build, copyAmpStyle, copyMainStyle, zipper)
 // const production = series(build)
 const development = series(build, serve, watcher)
 
-module.exports = { build, development, production }
+module.exports = { build, development, production, deploy }
