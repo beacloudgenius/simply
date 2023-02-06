@@ -89,7 +89,7 @@
 }
 
 .subscribe-box {
-  background-color: #fff;
+  background-color: #bfbfbf; /* 75 precent gray */
   display: flex;
   padding: 0.5em;
   border-radius: 5px;

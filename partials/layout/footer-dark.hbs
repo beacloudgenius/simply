@@ -27,10 +27,10 @@
             </div>
 
             {{!-- members subscribe --}}
-            {{#if @site.members_enabled}}
+            {{#if @site.members_enabled}}{{#unless @member}}
             <div class="footer-items">
                 <h3 class="text-white mb-5 text-xl">{{t "Subscribe"}}</h3>
-                <p class="mb-4">{{t "Get the best viral stories straight into your inbox!"}}</p>
+                <p class="mb-4">{{t "Subscribe now, so you won’t miss our latest content."}}</p>
 
                 {{!-- Form subscribe --}}
                 <form class="simply-form" data-members-form="subscribe">
@@ -38,8 +38,8 @@
                         class="footer-form-input"
                         data-members-email
                         type="email"
-                        placeholder="{{t "youremail@example.com"}}"
-                        aria-label="{{t "youremail@example.com"}}"
+                        placeholder="{{t "Your email address"}}"
+                        aria-label="{{t "Your email address"}}"
                         autocomplete="off"
                         required
                     />
@@ -48,6 +48,7 @@
                         <span class="button-content">Continue</span>
                         {{> "icons/loader"}}
                     </button>
+					<p>No spam. Unsubscribe any time.</p>
 
                     {{!-- success --}}
                     <div class="message-success p-2 rounded-md mt-4 hidden text-sm">
@@ -62,9 +63,14 @@
                     </div>
                 </form>
             </div>
-            {{/if}}
-        </div>
+			{{/unless}}{{/if}}
 
+			{{!-- if already subscribed --}}
+			{{#if @site.members_enabled}}{{#if @member}}
+				<p>Thank you for your interest.</p>
+			{{/if}}{{/if}}
+
+        </div>
 
         <div class="footer-bottom text-center text-sm py-8 mt-8{{#if @site.secondary_navigation}} flex flex-col justify-between lg:items-baseline lg:flex-row lg:text-left{{/if}}">
             {{!-- Footer Menu --}}
