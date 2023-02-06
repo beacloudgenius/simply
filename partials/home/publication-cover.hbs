@@ -7,9 +7,9 @@
 
 			{{#if @site.members_enabled}}
 				{{#if @custom.publication_cover_description}}
-				<h3 class="mt-6 text-2xl">
+				<h2 class="mt-6 text-2xl">
 					{{@custom.publication_cover_description}}
-				</h3>
+				</h2>
 				{{/if}}
 			{{/if}}
 
@@ -45,6 +45,7 @@
 						<input data-members-email type="email" placeholder="Your email address" required />
 						<button class="btn is-primary text-sm font-medium" type="submit">Subscribe</button>
 					</div>
+					<p>No spam. No jibber jabber. Unsubscribe any time.</p>
 					<div class="success-message">Awesome! Check your inbox and click the link to securely sign in.</div>
 					<div class="error-message">Sorry, something went wrong. Please try again.</div>
 				</form>
