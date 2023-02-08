@@ -79,7 +79,7 @@
     <script src="{{#is "post, page"}}{{asset "scripts/post.js"}}{{else}}{{asset "scripts/main.js"}}{{/is}}"></script>
 
 	{{!-- mermaid URL --}}
-	<script src="{{#is " post, page"}}{{asset "scripts/mermaid.js" }}{{/is}}"></script>
+	<script src="{{asset "scripts/mermaid.js" }}"></script>
 
     <script>
     {{#match @custom.color_scheme "Auto"}}
