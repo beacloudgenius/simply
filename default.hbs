@@ -20,22 +20,6 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script>
-    {{#match @custom.color_scheme "Auto"}}
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.querySelector('html').classList.add('dark');
-        } else {
-            document.querySelector('html').classList.remove('dark');
-        }
-    {{else}}
-        if (localStorage.theme === 'dark') {
-            document.querySelector('html').classList.add('dark');
-        } else if (localStorage.theme === 'light') {
-            document.querySelector('html').classList.remove('dark');
-        }
-    {{/match}}
-    </script>
-
     {{!-- Fonts -> Inter=400,500,600,700 PT Serift=400,700 --}}
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
     <noscript><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
@@ -93,6 +77,42 @@
 
     {{!-- Main scripts --}}
     <script src="{{#is "post, page"}}{{asset "scripts/post.js"}}{{else}}{{asset "scripts/main.js"}}{{/is}}"></script>
+
+	{{!-- mermaid URL --}}
+	<script src="{{#is " post, page"}}{{asset "scripts/mermaid.js" }}{{/is}}"></script>
+
+    <script>
+    {{#match @custom.color_scheme "Auto"}}
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.querySelector('html').classList.add('dark');
+			localStorage.theme = 'dark';
+		} else {
+			document.querySelector('html').classList.remove('dark');
+			localStorage.theme = '';
+		}
+
+		window.matchMedia('(prefers-color-scheme: dark)')
+		.addEventListener(
+			'change',
+			function (e) {
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					document.querySelector('html').classList.add('dark');
+					localStorage.theme = 'dark';
+				} else {
+					document.querySelector('html').classList.remove('dark');
+					localStorage.theme = '';
+				}
+			}
+		)
+    {{else}}
+        if (localStorage.theme === 'dark') {
+            document.querySelector('html').classList.add('dark');
+        } else if (localStorage.theme === 'light') {
+            document.querySelector('html').classList.remove('dark');
+        }
+    {{/match}}
+    </script>
 
     {{!-- Pagination Infinite Scroll --}}
     {{#match @custom.pagination "Infinite Scroll"}}{{#if pagination.next}}<script src="{{asset "scripts/pagination.js"}}" defer async></script>{{/if}}{{/match}}
