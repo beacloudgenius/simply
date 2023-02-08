@@ -30,6 +30,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/>
     {{!-- <style>{{> "main-styles"}}</style> --}}
 
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/asciinema-player@3.0.1/dist/bundle/asciinema-player.min.css" />
+
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 
@@ -113,6 +115,27 @@
         }
     {{/match}}
     </script>
+
+	{{!-- mermaid URL --}}
+	<script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.0.1/dist/bundle/asciinema-player.min.js"></script>
+
+	<script>
+	// const docDiv = document.getElementById('asciinema');
+	// const castURL = docDiv.getAttribute('src');
+	// AsciinemaPlayer.create(castURL, docDiv);
+
+	// Grab all asciinema divs
+	var htmlCollection = document.getElementsByClassName('asciinema')
+	Array.prototype.forEach.call(htmlCollection, function (element) {
+		{{!-- console.log(element); --}}
+		const cast = element.getAttribute('src');
+		{{!-- console.log(cast); --}}
+		const castURL = "https://tcs-ghost.s3.us-west-2.amazonaws.com/casts/" + cast;
+		{{!-- console.log(castURL); --}}
+		AsciinemaPlayer.create(castURL, element);
+	});
+
+	</script>
 
     {{!-- Pagination Infinite Scroll --}}
     {{#match @custom.pagination "Infinite Scroll"}}{{#if pagination.next}}<script src="{{asset "scripts/pagination.js"}}" defer async></script>{{/if}}{{/match}}

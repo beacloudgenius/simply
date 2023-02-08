@@ -1,0 +1,4 @@
+name = "simply"
+main = "src/cloudflare_ghost_worker.js"
+compatibility_date = "2023-02-08"
+send_metrics = false
