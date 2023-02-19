@@ -60,7 +60,7 @@ async function handleRequest(request) {
 	newResponse.headers.set(
 		"Permissions-Policy",
 		"\
-			fullscreen=(self 'https://thecloudseminar.com'), geolocation=*, camera=(); \
+			geolocation=(self), midi=(self), sync-xhr=(self), microphone=(self), camera=(self), magnetometer=(self), gyroscope=(self), fullscreen=(self), payment=(self) \
             ",
 	);
 
