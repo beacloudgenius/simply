@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <!--
-    Design by:
+    Powered by:
     ——————————
-        GODO FREDO
-        ✉ https://godofredo.ninja
-        ✎ @GodoFredoNinja
-        ✈ Lima - Perú
+        Cloud Genius®
+        ✉ https://cloudgenius.app
+        ✎ @k9lvn
 -->
 <html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark"{{/match}}>
 <head>
@@ -58,6 +57,9 @@
         {{!-- Footer Not Menu ./partials/layout/footer-not-menu.hbs --}}
         {{#match @custom.footer "No Secondary Navigation"}}{{>"layout/footer-not-menu"}}{{/match}}
     </div>
+
+	{{!-- REACT DIV --}}
+	{{!-- <div id="Aklilu">Aklilu</div> --}}
 
     {{!-- Loandig Bar --}}
     <div class="loadingBar top-0 fixed right-0 left-0 hidden"></div>
@@ -115,6 +117,26 @@
         }
     {{/match}}
     </script>
+
+{{!-- {{#is "home"}} --}}
+	{{!-- REACT JS BUNDLE --}}
+    <script src="{{asset "built/main.bundle.js"}}"></script>
+{{!-- {{/is}} --}}
+
+	{{!-- Chatra --}}
+	<script>
+			(function (d, w, c) {
+				w.ChatraID = 'dKwmML4zkf9sYCnMP';
+				var s = d.createElement('script');
+				w[c] = w[c] || function () {
+					(w[c].q = w[c].q || []).push(arguments);
+				};
+				s.async = true;
+				s.src = 'https://call.chatra.io/chatra.js';
+				if (d.head) d.head.appendChild(s);
+			})(document, window, 'Chatra');
+	</script>
+	{{!-- /Chatra --}}
 
 	{{!-- mermaid URL --}}
 	<script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.0.1/dist/bundle/asciinema-player.min.js"></script>

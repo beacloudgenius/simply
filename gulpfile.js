@@ -1,6 +1,7 @@
 const { series, watch, src, dest, parallel } = require('gulp')
 const pump = require('pump')
 const del = require('del')
+const fs = require('fs')
 
 const rename = require('gulp-rename')
 const replace = require('gulp-replace')
@@ -32,6 +33,7 @@ const tailwindcss = require('tailwindcss')
 const postImport = require('postcss-import')
 const precss = require('precss')
 const postNesting = require('tailwindcss/nesting') // postcss-nested
+const webpackStream = require('webpack-stream')
 
 // sass
 // const sass = require('gulp-sass')(require('sass'))
@@ -146,6 +148,20 @@ function images (done) {
   ], handleError(done))
 }
 
+async function mkdirbuilt (done) {
+  const folders = [
+    './assets',
+    './assets/built'
+  ]
+
+  folders.forEach(dir => {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir)
+      console.log('📁  folder created:', dir)
+    }
+  })
+}
+
 function copyAmpStyle (done) {
   pump([
     src('assets/styles/amp.css'),
@@ -229,9 +245,17 @@ async function deploy (done) {
 
     done()
   } catch (err) {
-    console.log('error caught')
+    console.log('could not deploy - check .env')
     handleError(done)
   }
+}
+
+function webpack (done) {
+  pump([
+    src('assets/built'),
+    webpackStream(require('./webpack.config.js')),
+    dest('assets/built')
+  ], handleError(done))
 }
 
 const cssWatcher = () => watch('src/css/**', styles)
@@ -239,13 +263,15 @@ const jsWatcher = () => watch(['src/js/**', '*.js'], scripts)
 const imgWatcher = () => watch('src/img/**', images)
 // const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs)
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], styles)
+const reactWatcher = () => watch(['react/**/*.*'], scripts)
 
-const compile = parallel(styles, scripts, images)
-const watcher = parallel(cssWatcher, jsWatcher, imgWatcher, hbsWatcher)
+const compile = parallel(styles, scripts, images, mkdirbuilt, webpack)
+const watcher = parallel(cssWatcher, jsWatcher, imgWatcher, hbsWatcher, reactWatcher)
 
 const build = series(clean, compile)
+// const production = series(build, copyAmpStyle, copyMainStyle, zipper, deploy)
 const production = series(build, copyAmpStyle, copyMainStyle, zipper)
 // const production = series(build)
-const development = series(build, serve, watcher)
+const development = series(build, copyAmpStyle, copyMainStyle, serve, watcher)
 
-module.exports = { build, development, production, deploy }
+module.exports = { build, development, production, clean, webpack, deploy }

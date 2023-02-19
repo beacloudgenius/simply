@@ -67,3 +67,6 @@
 /* Variants
 /* ---------------------------------------------------------- */
 /* @import "tailwindcss/variants"; */
+
+/* custom home.hbs home page */
+@import "home.css"
