@@ -133,25 +133,38 @@
 		</div>
 	</section>
 
+<!-- start testimonials -->
+
 	<section class="p-outer">
 		<div class="p-inner">
-			<h2>Testimonials from participants</h2>
+			{{!-- <h2>Testimonials</h2> --}}
 			<div class="p-posts-grid">
 				{{#get "posts" filter="tags:testimonials"}}
 					{{! Use the foreach helper to loop through }}
 					{{#foreach posts}}
-						<article class="p-post-card">
-							{{! Use the img_url helper to bring in the post's feature image. }}
-							<img src="{{img_url feature_image size=" m"}}" alt="{{feature_image_alt}}" />
-							<h3><a href="{{url}}">{{title}}</a></h3>
-							{{!-- {{content}} --}}
-							{{excerpt}}
-							{{!-- {{title}}, {{content}}, {{url}}, {{authors}}, {{date}}, {{excerpt}}, {{img_url}}, {{post_class}}], {{tags}}. --}}
-						</article>
+					<div class="testim">
+						<div class="container">
+							{{!-- <h2>Testimonials</h2> --}}
+							<div class="testim-content">
+								<div class="testim-box">
+
+									<div class="testim-box-content">
+										<img style="width:200px; height:200px; border-radius: 50%; object-fit: cover;"
+										src="{{img_url feature_image size=" s"}}" alt="{{feature_image_alt}}" />
+										<h3>{{title}}</h3>
+										<p>{{excerpt}}</p>
+									</div>
+									<p>{{content}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
 					{{/foreach}}
 				{{/get}}
 			</div>
 		</div>
+<!-- end testimonils -->
 	</section>
 
 	<section class="p-outer">
