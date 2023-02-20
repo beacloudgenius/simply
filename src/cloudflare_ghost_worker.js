@@ -48,20 +48,28 @@ async function handleRequest(request) {
             style-src 'unsafe-inline' 'self' fonts.googleapis.com cdn.jsdelivr.net maxcdn.bootstrapcdn.com; \
             default-src 'self' ghost.org/changelog.json ghost.org/explore/api/feed/ resources.ghost.io/resources/ghost/api/content/posts/ cdn.jsdelivr.net tcs-ghost.s3.us-west-2.amazonaws.com tenor.googleapis.com api.unsplash.com;  \
             font-src 'self' *.gstatic.com ; \
-            frame-src 'self' js.stripe.com ghost.org/explore/ calendly.com platform.twitter.com; \
+            frame-src 'self' js.stripe.com ghost.org/explore/ calendly.com platform.twitter.com player.vimeo.com www.youtube.com chat.chatra.io; \
             ",
 		// report-uri https://cloudgenius.report-uri.com;
+		// https://securityheaders.com/
 	);
 
 
 
 
 	newResponse.headers.set(
-		"Feature-Policy",
+		"Permissions-Policy",
 		"\
-			microphone 'self'; camera 'self';\
+			geolocation=(self), midi=(self), sync-xhr=(self), microphone=(self), camera=(self), magnetometer=(self), gyroscope=(self), fullscreen=(self), payment=(self) \
             ",
+	);
 
+	newResponse.headers.set(
+			"Referrer-Policy", "no-referrer, strict-origin-when-cross-origin"
+	);
+
+	newResponse.headers.set(
+			"report-to", "https://cloudgenius.report-uri.com"
 	);
 
 	return newResponse;
