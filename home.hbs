@@ -139,7 +139,7 @@
 		<div class="p-inner">
 			{{!-- <h2>Testimonials</h2> --}}
 			<div class="p-posts-grid">
-				{{#get "posts" filter="tags:testimonials"}}
+				{{#get "posts" filter="tags:testimonials" limit="6"}}
 					{{! Use the foreach helper to loop through }}
 					{{#foreach posts}}
 					<div class="testim">
