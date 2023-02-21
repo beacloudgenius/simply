@@ -148,10 +148,20 @@ function images (done) {
   ], handleError(done))
 }
 
+// Fonts
+function fonts (done) {
+  pump([
+    src('node_modules/@fontsource/homemade-apple/files/homemade-apple-all-400-normal.woff'),
+    dest('assets/fonts'),
+    livereload()
+  ], handleError(done))
+}
+
 async function mkdirbuilt (done) {
   const folders = [
     './assets',
-    './assets/built'
+    './assets/built',
+    './assets/fonts'
   ]
 
   folders.forEach(dir => {
@@ -265,7 +275,7 @@ const imgWatcher = () => watch('src/img/**', images)
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], styles)
 const reactWatcher = () => watch(['react/**/*.*'], scripts)
 
-const compile = parallel(styles, scripts, images, mkdirbuilt, webpack)
+const compile = parallel(styles, scripts, images, mkdirbuilt, fonts, webpack)
 const watcher = parallel(cssWatcher, jsWatcher, imgWatcher, hbsWatcher, reactWatcher)
 
 const build = series(clean, compile)
