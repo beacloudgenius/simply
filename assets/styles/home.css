@@ -185,5 +185,15 @@ svg[id^="mermaid"] {
 	background-color: blue;
 	text-align: center;
 } */
+/* Handwriting Font  @fontsource/homemade-apple */
+@font-face {
+	font-family: "Homemade Apple";
+	src: url('../fonts/homemade-apple-all-400-normal.woff');
+}
+#handwriting {
+	margin-top: 100px;
+	font-size: 50px!important;
+	font-family: "Homemade Apple";
+}
 
 /*# sourceMappingURL=map/home.css.map */
