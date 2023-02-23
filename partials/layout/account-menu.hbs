@@ -1,7 +1,7 @@
 {{#if @member}}
 {{!-- Button Updgrade --}}
-{{!-- {{#unless @member.paid}}<a class="button mr-2 text-sm font-medium hidden md:flex" href="{{@site.url}}/membership/">{{t "Upgrade"}}</a>{{/unless}} --}}
-{{#unless @member.paid}}<a data-portal="account/plans" class="button is-black mr-2 text-sm font-medium hidden md:flex" href="#">{{t "Upgrade"}}</a>{{/unless}}
+{{#unless @member.paid}}<a class="button mr-2 text-sm font-medium hidden md:flex" href="{{@site.url}}/membership/">{{t "Upgrade"}}</a>{{/unless}}
+{{!-- {{#unless @member.paid}}<a data-portal="account/plans" class="button is-black mr-2 text-sm font-medium hidden md:flex" href="#">{{t "Upgrade"}}</a>{{/unless}} --}}
 
 <div class="dropdown is-right h-16 flex items-center md:ml-3">
     {{!-- https://ghost.org/docs/members/member-data/ --}}
@@ -22,16 +22,16 @@
                     <div class="account-info flex-1 pl-2 overflow-hidden leading-tight">
                         <div class="font-medium text-base whitespace-nowrap text-ellipsis overflow-hidden pb-1">
                             {{#if @member.name}}
-                            {{!-- <a href="{{@site.url}}/account/" class="hover:text-gray-700">{{@member.name}}</a> --}}
-                            <a data-portal="account" href="#" class="hover:text-gray-700">{{@member.name}}</a>
+                            <a href="{{@site.url}}/account/" class="hover:text-gray-700">{{@member.name}}</a>
+                            {{!-- <a data-portal="account" href="#" class="hover:text-gray-700">{{@member.name}}</a> --}}
                             {{else}}
                             <span>{{t "Signed in as"}}</span>
                             {{/if}}
                         </div>
 
                         <div class="text-sm whitespace-nowrap text-ellipsis overflow-hidden">
-                            {{!-- <a href="{{@site.url}}/account/" class="text-gray-500 hover:underline" title="{{@member.email}}">{{@member.email}}</a> --}}
-                            <a data-portal="account" href="#" class="text-gray-500 hover:underline" title="{{@member.email}}">{{@member.email}}</a>
+                            <a href="{{@site.url}}/account/" class="text-gray-500 hover:underline" title="{{@member.email}}">{{@member.email}}</a>
+                            {{!-- <a data-portal="account" href="#" class="text-gray-500 hover:underline" title="{{@member.email}}">{{@member.email}}</a> --}}
                         </div>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
             <li class="dropdown-divider border-t my-3"></li>
             {{!-- Link to user account --}}
             <li class="px-5">
-                {{!-- <a href="{{@site.url}}/account/" class="pl-2 button is-white w-full justify-start"> --}}
-                <a data-portal="account" href="#" class="pl-2 button is-white w-full justify-start">
+                <a href="{{@site.url}}/account/" class="pl-2 button is-white w-full justify-start">
+                {{!-- <a data-portal="account" href="#" class="pl-2 button is-white w-full justify-start"> --}}
                     {{> "icons/person"}}
                     <span>{{t "Account"}}</span>
                 </a>
