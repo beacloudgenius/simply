@@ -28,9 +28,11 @@
                 </div>
                 {{#if @first}}
                     <div class="subscriber-avatar w-32 h-32 relative rounded-full overflow-hidden flex-none mt-4 ml-5">
-                        <span class="absolute inset-0 text-gray-400">{{> "icons/avatar"}}</span>
+
                         {{#if @member.avatar_image}}
                             <img src="{{@member.avatar_image}}" class="inset-image" alt="" />
+						{{else}}
+							<span class="absolute inset-0 text-gray-400">{{> "icons/avatar"}}</span>
                         {{/if}}
                     </div>
                 {{/if}}
@@ -96,15 +98,16 @@
 {{!-- <div class="p-vw6 px-4"> --}}
     <div class="account-box mx-auto max-w-xl w-full text-center">
         <div class="subscriber-avatar w-32 h-32 relative rounded-full overflow-hidden mx-auto">
-            <span class="absolute inset-0 text-gray-400">{{> "icons/avatar"}}</span>
             {{#if @member.avatar_image}}
                 <img src="{{@member.avatar_image}}" class="image-inset" alt=""/>
+			{{else}}
+				<span class="absolute inset-0 text-gray-400">{{> "icons/avatar"}}</span>
             {{/if}}
         </div>
-        <h1 class="account-box-title text-3xl my-6 font-semibold">Currently, you're not a subscriber</h1>
-        <p>Hey there! <strong>{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</strong> is subscribed to free updates from {{@site.title}}, but doesn't have a paid subscription to unlock full access.</p>
+        <h1 class="account-box-title text-3xl my-6 font-semibold">Currently, you're missing out.</h1>
+        <p>Hey there! <strong>{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</strong>, you are receiving only the free updates from {{@site.title}}. You do not have a paid subscription to unlock full access.</p>
         <div class="authbox-signup mt-8">
-            <a class="button is-primary is-medium" href="{{@site.url}}/signup/">Subscribe now</a>
+            <a class="button is-primary is-medium" href="{{@site.url}}/signup/">Upgrade yourself</a>
         </div>
     </div>
 {{!-- </div> --}}

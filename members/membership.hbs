@@ -10,9 +10,120 @@
 {{else}}
 
 <header class="checkout-header">
+	<div class="px-4 py-vw6 mx-auto max-w-3xl text-center">
+		<h1 class="text-5xl text-title lg:text-5xl">Live participation via Zoom</h1>
+		<div class="mt-8 text-xl text-gray-500">Nothing beats actual hands-on practise.</div>
+	</div>
+</header>
+
+<section class="mb-24 px-4">
+	<div class="plan-wrap max-w-1100 mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-12">
+
+		<div class="plan-box plab-box-{{name}} p-8 shadow-lg lg:col-span-4 bg-gray-100">
+			<header class="plan-box-header">
+				<h3 class="text-base font-semibold uppercase mb-2 text-title tracking-wide">Essential</h3>
+				<p class="text-gray-500">description of essential</p>
+
+				<div class="text-3xl my-8 leading-none text-title">
+					<span class="font-semibold">$1495</span>
+					<span class="text-base text-gray-500">one time</span>
+				</div>
+				{{!-- {{@member.email}} --}}
+				{{!-- <form method="POST" action="https://pay.cloudgenius.app/apps/3Qr4B6t3RDsJFknXs5YjRddY9tux/pos">
+					<input type="hidden" name="email" value={{@member.email}} />
+					<input type="hidden" name="orderId" value={{@member.uuid}} />
+					<input type="hidden" name="notificationUrl" value="https://thecloudseminar.com/callbacks" />
+					<input type="hidden" name="redirectUrl" value="https://thecloudseminar.com/thankyou" />
+					<button class="button is-primary mt-8" type="submit" name="choiceKey" value="Essential">Pay using Bitcoin</button>
+				</form> --}}
+				<a href="https://pay.cloudgenius.app/apps/3Qr4B6t3RDsJFknXs5YjRddY9tux/pos" class="button is-primary mt-8">Pay using Bitcoin</a>
+				<a href="https://buy.stripe.com/4gw9Dq1jRes2fks4gh?prefilled_email={{@member.email}}&client_reference_id={{@member.uuid}}" class="button is-primary mt-8">Pay using Credit Card</a>
+				{{!-- https://stripe.com/docs/payments/payment-links#track-payments --}}
+				{{!-- https://priceblocs.com/ --}}
+				{{!-- <a href="javascript:" class="button is-primary mt-8" data-portal="signup">Get Started</a> --}}
+			</header>
+
+			<div class="plan-box-body mt-8 leading-tight">
+				<ul>
+					<li class="flex self-start mb-2 items-center">
+						{{!-- <svg class="text-primary flex-none mr-2 icon">
+							<use xlink:href="#icon-checkmark"></use>
+						</svg> --}}
+						<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+							class="mr-2 h-3 w-3 stroke-current" alt="">
+							<path d="M1 6.89286L6.10714 12L13.9643 1" stroke-width="2"></path>
+						</svg>
+						<span>benefit list</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="plan-box plab-box-{{name}} p-8 shadow-lg lg:col-span-4 bg-gray-100">
+			<header class="plan-box-header">
+				<h3 class="text-base font-semibold uppercase mb-2 text-title tracking-wide">Executive</h3>
+				<p class="text-gray-500">description of executive</p>
+
+				<div class="text-3xl my-8 leading-none text-title">
+					<span class="font-semibold">$4995</span>
+					<span class="text-base text-gray-500">one time</span>
+				</div>
+				{{!-- {{@member.email}} --}}
+				{{!-- <form method="POST" action="https://pay.cloudgenius.app/apps/3Qr4B6t3RDsJFknXs5YjRddY9tux/pos">
+					<input type="hidden" name="email" value={{@member.email}} />
+					<input type="hidden" name="orderId" value={{@member.uuid}} />
+					<input type="hidden" name="notificationUrl" value="https://thecloudseminar.com/callbacks" />
+					<input type="hidden" name="redirectUrl" value="https://thecloudseminar.com/thankyou" />
+					<button class="button is-primary mt-8" type="submit" name="choiceKey" value="Executive">Pay using
+						Bitcoin</button>
+				</form> --}}
+				<a href="https://pay.cloudgenius.app/apps/3Qr4B6t3RDsJFknXs5YjRddY9tux/pos" class="button is-primary mt-8">Pay using
+					Bitcoin</a>
+				<a href="https://buy.stripe.com/9AQdTGgeLcjUc8g3cc?prefilled_email={{@member.email}}&client_reference_id={{@member.uuid}}" class="button is-primary mt-8">Pay using Credit Card</a>
+				{{!-- <a href="javascript:" class="button is-primary mt-8" data-portal="signup">Get Started</a> --}}
+			</header>
+
+			<div class="plan-box-body mt-8 leading-tight">
+				<ul>
+					<li class="flex self-start mb-2 items-center">
+						{{!-- <svg class="text-primary flex-none mr-2 icon">
+							<use xlink:href="#icon-checkmark"></use>
+						</svg> --}}
+						<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+							class="mr-2 h-3 w-3 stroke-current" alt="">
+							<path d="M1 6.89286L6.10714 12L13.9643 1" stroke-width="2"></path>
+						</svg>
+						<span>benefit list</span>
+					</li>
+					<li class="flex self-start mb-2 items-center">
+						{{!-- <svg class="text-primary flex-none mr-2 icon">
+							<use xlink:href="#icon-checkmark"></use>
+						</svg> --}}
+						<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+							class="mr-2 h-3 w-3 stroke-current" alt="">
+							<path d="M1 6.89286L6.10714 12L13.9643 1" stroke-width="2"></path>
+						</svg>
+						<span>1x1 access to Nilesh</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+
+	{{!-- Optional Note --}}
+	<div class="mt-20 mx-auto max-w-xl px-4 text-center">
+		<p><strong>Please note:</strong></p>
+	</div>
+
+</section>
+
+
+<header class="checkout-header">
     <div class="px-4 py-vw6 mx-auto max-w-3xl text-center">
-        <h1 class="text-5xl text-title lg:text-5xl">Simply plans for everyone</h1>
-        <div class="mt-8 text-xl text-gray-500">Start for free, buy it when you 💚 it</div>
+        <h1 class="text-5xl text-title lg:text-5xl">Available On-demand</h1>
+        <div class="mt-8 text-xl text-gray-500">Work at your own pace</div>
     </div>
 </header>
 
@@ -59,7 +170,7 @@
 
     {{!-- Optional Note --}}
     <div class="mt-20 mx-auto max-w-xl px-4 text-center">
-        <p><strong>Please note:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet, erat vel fringilla mattis, diam arcu malesuada dolor, at varius massa eros et orci. Fusce non lectus vulputate, laoreet ligula.</p>
+        <p><strong>Please note:</strong></p>
     </div>
 
 </section>

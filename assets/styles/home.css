@@ -46,9 +46,13 @@
 /* .p-hero h1 {
 	text-transform: uppercase;
 } */
-.p-hero h1 {
-	font-size: 32px;
+/* .p-hero h1 {
+	font-size: 2rem;
 }
+
+.p-hero h2 {
+	font-size: 1.5rem;
+} */
 .p-hero p {
 	font-size: 24px;
 	line-height: 1.5;
@@ -191,9 +195,11 @@ svg[id^="mermaid"] {
 	src: url('../fonts/homemade-apple-all-400-normal.woff');
 }
 #handwriting {
-	margin-top: 100px;
-	font-size: 50px!important;
+	font-size: 40px !important;
 	font-family: "Homemade Apple";
+	margin: auto;
+	padding: 10px;
+	/* border: 3px solid var(--ghost-accent-color); */
 }
 
 /*# sourceMappingURL=map/home.css.map */

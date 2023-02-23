@@ -202,6 +202,7 @@ function zipper (done) {
       'assets/**',
       'locales/*.json',
       '*.hbs',
+      'members/**',
       'partials/**',
       'podcast/**',
       'LICENSE',

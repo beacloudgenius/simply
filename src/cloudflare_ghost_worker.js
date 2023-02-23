@@ -44,7 +44,7 @@ async function handleRequest(request) {
             media-src blob: thecloudseminar.com hls.home.cloudgeni.us hls.cloudgenius.app *.amazonaws.com youtube.com *.vimeo.com *.vimeocdn.com; \
             script-src * data: 'unsafe-eval' 'unsafe-inline' blob: https: 'self' *.vimeo.com *.chatra.io hi.cloudgenius.app storage.googleapis.com js.stripe.com *.stripe.com *.stripe.network;\
             frame-ancestors 'self'; \
-            form-action 'self' https://hi.cloudgenius.app/form/submit; \
+            form-action 'self' *.cloudgenius.app formspree.io; \
             style-src 'unsafe-inline' 'self' fonts.googleapis.com cdn.jsdelivr.net maxcdn.bootstrapcdn.com; \
             default-src 'self' ghost.org/changelog.json ghost.org/explore/api/feed/ resources.ghost.io/resources/ghost/api/content/posts/ cdn.jsdelivr.net tcs-ghost.s3.us-west-2.amazonaws.com tenor.googleapis.com api.unsplash.com;  \
             font-src 'self' *.gstatic.com ; \
