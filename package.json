@@ -191,7 +191,7 @@
     "fix": "standard --fix",
     "wdev": "wrangler dev src/cloudflare_ghost_worker.js",
     "wpublish": "wrangler publish src/cloudflare_ghost_worker.js --name ghost",
-    "deploy-to-production": "rm -rf dist && yarn test && yarn build && gulp production && yarn deploy && yarn wpublish",
+    "deploy-to-production": "rm -rf dist && yarn test && yarn prod && yarn deploy && yarn wpublish",
     "dd": "gulp production"
   },
   "devDependencies": {
