@@ -169,7 +169,7 @@
 /* some fancy styles */
 
 .gradient-1 {
-	background: -webkit-linear-gradient(135deg, #F56772 20%, #7280FF 80%);
+	background: -webkit-linear-gradient(135deg, #CC559A 20%, #326ce5 80%);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
