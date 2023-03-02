@@ -225,3 +225,60 @@ svg[id^="mermaid"] {
 	padding: 10px;
 	/* border: 3px solid var(--ghost-accent-color); */
 }
+
+
+
+  details.accordion {
+  	--color-accent: #222;
+  	margin-bottom: 1em;
+  	border-radius: 5px;
+  	padding: 1.5em;
+  	position: relative;
+  	padding-left: 3.5em;
+  	border-left: 5px solid var(--color-accent);
+  	overflow: hidden;
+	font-size: 1.6em;
+	font-weight: 300;
+	line-height: 1.6;
+  }
+
+  details.accordion::before {
+  	background-color: var(--color-accent);
+  	opacity: 0.1;
+  	content: "";
+  	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	top: 0;
+  	left: 0;
+  }
+
+  details.accordion summary {
+  	list-style: none;
+  }
+
+  details.accordion summary::marker {
+  	display: none;
+  }
+
+  details.accordion summary::before {
+  	position: absolute;
+  	content: '+';
+  	left: 1.5rem;
+  	top: 1.35rem;
+  	color: var(--color-accent);
+  	font-size: 1.6rem;
+  	line-height: 1;
+  	/* font-weight: normal; */
+	font-size: 1.6em;
+	font-weight: 500;
+	line-height: 1.9;
+  }
+
+  details.accordion[open] summary::before {
+  	transform: rotate(45deg);
+  }
+
+  details.accordion[open] summary {
+  	font-weight: 700;
+  }

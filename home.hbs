@@ -1,128 +1,386 @@
-{{!< default}} <main id="mukhya">
-	<section class="p-outer">
-		<div class="p-inner p-hero">
-			<div class="p-hero-left">
-				<div>
-					<h1>Transform your career</h1>
-					<h2><em>the <span class="gradient-1">right way, like a genius</span> ✨</em></h2>
-					<h1 class="mt-8">&nbsp;</h1>
-					<h1 class="mt-8">Welcome to<br />The 2023 Cloud Seminar</h1>
-					{{!-- REACT DIV --}}
-					<sub style="float: right"><em>Powered by</em>
-						<span>
-							<span style="display: inline-block; vertical-align: middle;" id="logo"></span>Cloud
-							Genius<sup>®</sup>
-						</span>
-					</sub>
-					{{!-- <h2 class="mt-8">Learn to <span class="gradient-1">ship production cloud services like a
-							genius</span> ✨</h2> --}}
-				</div>
-				<div class="p-hero-buttons">
-					{{! Launches the Ghost membership portal }}
-					{{!-- <button data-portal="signup">Enroll in our live cohort</button> --}}
-					{{! Link to an about page }}
-					{{!-- <a href="/membership/">Enroll &rarr;</a> --}}
-					<a href="#shuru">Explore &rarr;</a>
-				</div>
-			</div>
-			<div class="p-hero-right">
-				{{! Loads the your cover image as defined in Ghost admin }}
-				{{!-- <img src="{{img_url @site.cover_image size=" l"}}" alt="Pitcher plants" /> --}}
-				<div style="padding:56.25% 0 0 0;position:relative;">
-					<iframe src="https://player.vimeo.com/video/436312312?autoplay=1&loop=1"
-						allow="autoplay; fullscreen; picture-in-picture"
-						style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Caroll George">
-					</iframe>
-				</div>
-				<script src="https://player.vimeo.com/api/player.js"></script>
-			</div>
-		</div>
-	</section>
+{{!< default}}
+<main id="mukhya">
+    <section class="p-outer">
+        <div class="p-inner p-hero">
+            <div class="p-hero-left">
+                <div>
+                    <h1>Transform your career</h1>
+                    <h2><em>the
+                            <span class="gradient-1">right way, like a genius</span>
+                            ✨</em></h2>
+                    <h1 class="mt-8">&nbsp;</h1>
+                    <h1 class="mt-8">Welcome to<br />The 2023 Cloud Seminar</h1>
+                    {{! REACT DIV }}
+                    <sub style="float: right"><em>Powered by</em>
+                        <span>
+                            <span
+                                style="display: inline-block; vertical-align: middle;"
+                                id="logo"
+                            ></span>Cloud Genius<sup>®</sup>
+                        </span>
+                    </sub>
+                    {{! <h2 class="mt-8">Learn to <span class="gradient-1">ship production cloud services like a
+							genius</span> ✨</h2> }}
+                </div>
+                <div class="p-hero-buttons">
+                    {{! Launches the Ghost membership portal }}
+                    {{! <button data-portal="signup">Enroll in our live cohort</button> }}
+                    {{! Link to an about page }}
+                    {{! <a href="/membership/">Enroll &rarr;</a> }}
+                    <a href="#shuru">Explore &rarr;</a>
+                </div>
+            </div>
+            <div class="p-hero-right">
+                {{! Loads the your cover image as defined in Ghost admin }}
+                {{!-- <img src="{{img_url @site.cover_image size=" l"}}" alt="Pitcher plants" /> --}}
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe
+                        src="https://player.vimeo.com/video/436312312?autoplay=1&loop=1"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                        title="Caroll George"
+                    >
+                    </iframe>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+        </div>
+    </section>
 
+    <section id="shuru" class="p-outer">
+        <div class="p-inner">
+            <div>
+                <p
+                    style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+                ><span
+                        style="font-size: 2em; font-weight: 800; line-height: 1.5;"
+                        id="cggrads"
+                    ></span>
+                    participants
+                    <b class="gradient-1">realized cloud career dreams</b>
+                    via the programs I have been running since 2009 for
+                    <em>Boeing, Microsoft, Expedia, Amazon, Hitachi, and more.</em></p>
+                <p
+                    style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+                    class="mt-8"
+                >
+                    Here are some of them.
+                </p>
+                <script>
+                    let date = new Date();
+                    document.getElementById("cggrads").innerHTML =
+                    Math.trunc((date.getFullYear() * 12 + 10 * date.getMonth())
+                    - 22517);
+                </script>
 
+                <!-- start testimonials -->
 
+                <section class="p-outer">
+                    <div class="p-inner">
+                        {{! <h2>Testimonials</h2> }}
+                        <div class="p-posts-grid">
+                            {{#get
+                                "posts"
+                                filter="tags:testimonials"
+                                limit="6"
+                            }}
+                                {{! Use the foreach helper to loop through }}
+                                {{#foreach posts}}
+                                    <div class="testim">
+                                        <div class="container">
+                                            {{! <h2>Testimonials</h2> }}
+                                            <div class="testim-content">
+                                                <div class="testim-box">
 
-	<section id="shuru" class="p-outer">
-		<div class="p-inner">
-			<div>
-				<p style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"><span
-						style="font-size: 2em; font-weight: 800; line-height: 1.5;" id="cggrads"></span> participants <b
-						class="gradient-1">realized cloud career dreams</b> via the programs I have been running since
-					2009 for <em>Boeing, Microsoft, Expedia, Amazon, and Hitachi.</em></p>
-				<p style="font-size: 1.6em; font-weight: 300; line-height: 1.6;" class="mt-8">
-					Here are some of them.
-				</p>
-				<script>
-					let date = new Date();
-					document.getElementById("cggrads").innerHTML = Math.trunc((date.getFullYear() * 12 + 10 * date.getMonth()) - 22517);
-				</script>
+                                                    <div
+                                                        class="testim-box-content"
+                                                    >
+                                                        <img
+                                                            style="margin: auto; width:200px; height:200px; border-radius: 50%; object-fit: cover;"
+                                                            src="{{img_url
+                                                                feature_image
+                                                                size="s"
+                                                            }}"
+                                                            alt="{{feature_image_alt}}"
+                                                        />
+                                                        <h3
+                                                            class="text-center"
+                                                        >{{title}}</h3>
+                                                        <p
+                                                            style="font-size: 80%;"
+                                                            class="text-center"
+                                                        >{{excerpt}}</p>
+                                                    </div>
 
-				<!-- start testimonials -->
+                                                    <p
+                                                        style="font-size: 80%;"
+                                                    >{{content words="200"}}</p>
 
-				<section class="p-outer">
-					<div class="p-inner">
-						{{!-- <h2>Testimonials</h2> --}}
-						<div class="p-posts-grid">
-							{{#get "posts" filter="tags:testimonials" limit="6"}}
-							{{! Use the foreach helper to loop through }}
-							{{#foreach posts}}
-							<div class="testim">
-								<div class="container">
-									{{!-- <h2>Testimonials</h2> --}}
-									<div class="testim-content">
-										<div class="testim-box">
+                                                    <a
+                                                        class="post-card-image-link"
+                                                        href="{{url}}"
+                                                    >... read more about
+                                                        <b>{{title}}</b></a>
 
-											<div class="testim-box-content">
-												<img style="margin: auto; width:200px; height:200px; border-radius: 50%; object-fit: cover;"
-													src="{{img_url feature_image size="s"}}"
-													alt="{{feature_image_alt}}" />
-												<h3 class="text-center">{{title}}</h3>
-												<p style="font-size: 80%;" class="text-center">{{excerpt}}</p>
-											</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-											<p style="font-size: 80%;">{{content words="200"}}</p>
+                                {{/foreach}}
+                            {{/get}}
+                        </div>
+                    </div>
+                </section>
 
-											<a class="post-card-image-link" href="{{url}}">... read more about <b>{{title}}</b></a>
+                <!-- end testimonils -->
 
-										</div>
-									</div>
-								</div>
-							</div>
+                <section class="p-outer">
+                    <div class="p-inner">
+                        <div>
+                            <h2>Okay, so it has clearly worked for some people.<br
+                                /><br />
+                                <em>But,
+                                    <span class="gradient-1">will it work for
+                                        me, specifically me?</span></em></h2>
+                            <p
+                                style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+                                class="mt-8"
+                            >Well, that depends. Our program isn’t a magic
+                                bullet. Success takes time, dedication,
+                                attention to details, and continued effort with
+                                discipline. Success in life is probabilistic,
+                                not deterministic.
+                                <br /><br />
+                                We can help you save time and can teach you what
+                                you need to know to stack the deck in your
+                                favor.
+                                <br /><br />
+                                But we can’t do the actual work for you. You
+                                have to put in the effort yourself.
+                            </p>
+                            <div class="mt-8">&nbsp;</div>
+                            <div class="mt-8">&nbsp;</div>
+                        </div>
+                    </div>
+                </section>
 
-							{{/foreach}}
-							{{/get}}
-						</div>
-					</div>
-				</section>
+                <section
+                    class="p-outer"
+                    style="background-color: rgba(55,99,255,.06);"
+                >
+                    <div class="p-inner">
+                        <h1>Who The Seminar Isn't For</h1>
+                        <p
+                            style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+                            class="mt-8"
+                        >Our seminar probably isn't a good fit for you if:<br />
+                            <ul
+                                style="list-style: inside; font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+                            >
+                                <li
+                                    style="list-style-position: outside; margin: 20px 0;"
+                                >You're not willing to put in the time and
+                                    effort it takes to commit to focus,
+                                    consistency and diligence needed for the
+                                    long term.</li>
+                                <li
+                                    style="list-style-position: outside; margin: 20px 0;"
+                                >You're looking for a magic bullet that'll get
+                                    you a job you want with little effort.
+                                    There's no secret here. It's just about
+                                    putting in the work, doing it consistently,
+                                    and stacking the deck in your favor in
+                                    whatever way you can.</li>
+                                <li
+                                    style="list-style-position: outside; margin: 20px 0;"
+                                >You're hoping that this seminar is an easy road
+                                    to riches in the cloud. Again, that's not
+                                    how it works. There are no shortcuts.</li>
+                                <li
+                                    style="list-style-position: outside; margin: 20px 0;"
+                                >Like in life, there are no guarantees in this
+                                    game. That's not how it works.</li>
+                                <li
+                                    style="list-style-position: outside; margin: 20px 0;"
+                                >Our program isn’t really suited for hobbyists.
+                                    If you just want to learn the cloud as a fun
+                                    thing on the side that lets you flex your
+                                    creative juices, that’s totally fine - but
+                                    going through our seminar will be expensive,
+                                    time-consuming and intensely effortful.
+                                </li>
+                                <li
+                                    style="list-style-position: outside; margin: 20px 0;"
+                                >We'll teach you the tools, techniques, systems
+                                    and processes that have worked for us and
+                                    our participants, but we obviously can't
+                                    guarantee any specific result.</li>
+                                <li
+                                    style="list-style-position: outside; margin: 20px 0;"
+                                >Again, the one thing we can guarantee is that
+                                    if you keep building projects that solve
+                                    real problems, and showcase your work for
+                                    others to see, your life will likely change
+                                    in a couple of years.</li>
+                                <li
+                                    style="list-style-position: outside; margin: 20px 0;"
+                                >Our objective in this course is to make it
+                                    easier for you to maintain that level of
+                                    consistency by building systems and saving
+                                    your time. If that sounds like something
+                                    you'd like, we'd love to have you.</li>
+                                <li
+                                    style="list-style-position: outside; margin: 20px 0;"
+                                >We are sorry we wasted your time in reading
+                                    this far if that is not what you're looking
+                                    for. We wish you the very best of luck.
+                                    Regardless, feel free to email us if you
+                                    need a hand with anything!</li>
+                            </ul>
+                            <div class="mt-8">&nbsp;</div>
+                            <div class="mt-8">&nbsp;</div>
+                        </p>
+                    </div>
+                </section>
+                <section class="p-outer">
+                    <div class="p-inner">
+                        <h1>Who The Course Is Great For</h1>
+                        <p
+                            class="mt-8"
+                            style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+                        >Our seminar is a great fit if you’re serious about
+                            building a rewarding career in cloud computing and
+                            want to dedicate time, energy, and focused effort to
+                            realize your career dream, then you’ll love our
+                            seminar.
+                        </p>
+                        <p
+                            class="mt-8"
+                            style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+                        >
+                            The specifics are nuanced because (a) the course is
+                            pretty varied, and (b) the specific value you'll get
+                            from it does depend on the effort you put it.
+                        </p>
+                        <div>
+                            <h3 class="mt-8">Select your current skill level</h3>
+                            <p>
+                                We've tried to break things down (very roughly)
+                                by baseline skill level of past participants.
+                                Naturally, this is an imperfect metric, but it's
+                                the best we've got to stratify people, so please
+                                take the specific breakdown with a pinch of
+                                salt.
+                            </p>
 
-				<!-- end testimonils -->
+                        </div>
 
-				<div class="text-center mt-8">
-					<h2 style="display: inline-block; vertical-align: middle;" class="gradient-1">You, too, can build a
-						career in the cloud.</h2>
-				</div>
+                        {{! https://bironthemes.com/blog/ghost-snippet-accordions/ }}
+                        <details
+                            class="accordion"
+                            style="--color-accent: hotpink;"
+                        >
+                            <summary>☁️ You routinely use Windows/Mac, have
+                                heard of Linux or used Linux</summary>
+                            <p></p>
+                        </details>
 
-				{{!-- REACT DIV --}}
-				{{!-- <div id="swooshid">\</div> --}}
+                        <details
+                            class="accordion"
+                            style="--color-accent: royalblue;"
+                        >
+                            <summary>☁️☁️ You use some cloud services some cloud
+                                provider like AWS, Google, Azure etc.</summary>
+                            <p></p>
+                        </details>
 
+                        <details
+                            class="accordion"
+                            style="--color-accent: aquamarine;"
+                        >
+                            <summary>☁️☁️☁️ You use Docker containers and have
+                                heard of Kubernetes</summary>
+                            <p></p>
+                        </details>
 
-				<svg viewBox="0 0 1000 634" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-					<defs>
-						<filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="559.843" id="a"
-							width="809.1" x="98.484" y="42.03">
-							<feDropShadow dx="0" dy="10" flood-color="#000" flood-opacity=".333" in="SourceGraphic"
-								result="Shadow" stdDeviation="5" />
-						</filter>
-					</defs>
-					<path
-						d="M256.293 44.53c-8.142 0-17.641 1-28.497 3-10.856 2-21.033 4.857-30.532 8.571-9.499 3.714-19.677 9.143-30.533 16.285-10.856 7.143-19.269 14-25.24 20.571-5.971 6.572-10.992 13.857-15.063 21.857s-6.92 15.714-8.549 23.142c-1.628 7.429-2.442 14.857-2.442 22.285 0 7.429.542 14.143 1.628 20.143 1.086 6 2.307 10.999 3.664 14.999 1.357 4 3.664 9 6.921 15 3.256 6 6.106 10.285 8.549 12.857 2.442 2.571 5.292 4.714 8.549 6.428 3.257 1.714 6.378 2.429 9.363 2.143 2.985-.286 5.021-1.429 6.107-3.429 1.085-1.999 1.085-4.857 0-8.571-1.086-3.714-4.75-7.857-10.992-12.428-6.242-4.571-10.856-8.571-13.842-12-2.985-3.428-5.428-7-7.327-10.714-1.9-3.714-3.529-8.142-4.886-13.285-1.357-5.143-2.035-10.857-2.035-17.142 0-6.286.543-12 1.628-17.143 1.086-5.143 2.714-10.285 4.886-15.428 2.171-5.143 4.885-10.143 8.142-15a103.835 103.835 0 0 1 10.991-13.714c4.071-4.285 8.142-8 12.213-11.142 4.071-3.143 11.942-7.714 23.612-13.714 11.67-6 22.662-10.428 32.975-13.285 10.313-2.858 20.762-4.429 31.347-4.715 10.584-.285 19.948.715 28.09 3 8.142 2.286 15.334 5.429 21.576 9.429 6.242 4 11.263 8 15.063 12 3.799 4 6.92 7.856 9.363 11.57 2.443 3.715 5.292 9.714 8.549 18 3.257 8.285 5.564 17.142 6.921 26.571 1.357 9.428 1.764 19.571 1.221 30.427-.543 10.857-1.764 20.857-3.664 30-1.9 9.142-4.342 17.856-7.328 26.142-2.985 8.285-5.156 15.571-6.513 21.856-1.357 6.286-2.036 12.572-2.036 18.857 0 6.286.814 11.857 2.443 16.714 1.628 4.857 3.664 8.571 6.106 11.143 2.443 2.571 5.021 4.428 7.735 5.571 2.714 1.143 5.7 1.857 8.956 2.143 3.257.285 7.193-.143 11.806-1.286 4.614-1.143 10.721-4.286 18.32-9.428 7.599-5.143 13.977-10.714 19.133-16.714 5.157-6 9.228-11.714 12.213-17.143 2.986-5.428 4.75-8.285 5.293-8.571l.814-.428v.857c0 .571-6.649 26.713-19.948 78.426s-24.019 89.855-32.161 114.426c-8.142 24.571-14.791 42.57-19.948 53.998-5.156 11.429-9.906 20.571-14.248 27.428-4.343 6.857-8.549 12.571-12.62 17.143-4.071 4.571-9.364 9.428-15.877 14.571a123.613 123.613 0 0 1-20.762 13.285c-7.328 3.714-16.284 6.857-26.869 9.429-10.584 2.571-20.219 3.857-28.904 3.857-8.685 0-18.319-1.429-28.904-4.286-10.585-2.857-20.084-7-28.497-12.428-8.413-5.429-15.741-12-21.983-19.714-5.982-7.392-10.816-15.457-14.554-24.16-.007-.01-.019-.017-.026-.027a24.197 24.197 0 0 1-3.18-6.616c-.023-.076.027-.139.025-.214-.451-1.11-.905-2.285-1.272-3.67-.295-.935-.441-1.816-.61-2.705a27.848 27.848 0 0 1-1.527-6.241c-.009-.035-.016-.072-.026-.107-.112-.435-.243-.873-.356-1.312a2.6 2.6 0 0 0-.051.053c-.064-.34-.139-.676-.203-1.018-.732-3.053-1.107-5.9-1.145-8.571-.092.057-.189.103-.28.161l-.407-2.572c-.272-1.714-.407-3-.407-3.857v-1.285h.28c-.006-.092.005-.178 0-.268-.241-2.835-.262-5.663.152-8.25.008-.048.062-.063.077-.107-.02-1.042-.026-2.144-.128-2.946a.815.815 0 0 1 .153-.59c-.316-3.384-.018-6.514 1.094-8.919.011-.025.036-.034.051-.054l.025-.616c.085-1.739.23-3.062.509-4.339.037-.167.144-.294.255-.402-.01-.026-.014-.057-.026-.08.033-.012.07-.013.102-.027.01-.004.015-.023.026-.027a44.07 44.07 0 0 1 1.195-4.741c.076-.378.092-.732.204-1.125.269-2.058.582-3.908 1.094-5.598.016-.052.077-.059.102-.107.068-.267.042-.534.127-.803.814-2.572 2.85-7.429 6.107-14.571 3.256-7.143 6.649-13.286 10.177-18.428 3.528-5.143 8.006-10.572 13.434-16.286 5.428-5.714 10.585-10.428 15.47-14.142 4.885-3.714 10.856-7.429 17.913-11.143 7.056-3.714 13.705-6.571 19.947-8.571 6.243-2 16.149-3.714 29.719-5.143 13.57-1.428 23.883-1.714 30.939-.857 7.057.857 13.163 2.286 18.32 4.286 5.156 2 9.77 4.857 13.841 8.571 4.071 3.714 7.057 8.143 8.956 13.285 1.9 5.143 2.714 9.714 2.443 13.714-.271 4-1.628 8.286-4.071 12.857-2.443 4.571-3.664 8.286-3.664 11.143 0 2.857.679 5.285 2.036 7.285s2.985 3.143 4.885 3.429c1.9.285 3.392.142 4.478-.429 1.085-.571 2.307-1.714 3.664-3.428 1.357-1.715 2.578-4.429 3.664-8.143 1.085-3.714 1.628-8.428 1.628-14.143 0-5.714-1.086-11.571-3.257-17.571-2.171-5.999-5.021-10.999-8.549-14.999-3.528-4-9.092-7.857-16.691-11.571-7.599-3.714-15.063-6.143-22.39-7.286-7.328-1.143-15.606-1.571-24.834-1.285-9.227.285-17.912 1.285-26.054 2.999-8.142 1.715-14.927 3.572-20.355 5.572-5.428 2-13.163 6-23.205 11.999-10.041 6-19.405 13.429-28.089 22.286-8.685 8.856-14.656 15.856-17.913 20.999-3.257 5.143-5.699 9.714-7.328 13.714l-2.442 6c-.033-.028-.069-.05-.102-.081-.232.685-.369 1.271-.662 2.036-.206.542-.323.862-.763 1.982a.742.742 0 0 1-.432.429c.012.442.025.884-.077 1.205-.08.255-.312.37-.534.509-.231.881-.723 2.246-.891 3.134-.066.352-.343.556-.661.589-.398 1.824-.872 4.439-1.323 6.134-.019.072-.093.103-.127.161v.026a2.57 2.57 0 0 1-.128 1.018c-.035.112-.066.109-.101.214-.365 3.66-.89 7.41-1.629 11.277-.012.065-.101.055-.127.107-.4 5.368-.861 11.322-.941 12.375-.022.278-.19.461-.408.589-.105 1.124-.251 1.908-.381 2.732.046 1.339.097 2.487.127 3.214a.798.798 0 0 1-.178.509c.032.689.069 1.282.102 2.116.301.805.544 1.922.687 3.723l.407 5.143h-.229c.073.206.151.433.203.67.066.27.171.588.229.857.151.685.096 1.176.178 1.794.532.568.954 1.446 1.247 2.679.165.693.132 1.438.153 2.17.028.035.08.037.102.08.272.545.366 1.083.483 2.196.004.04-.004.041 0 .081.063.603.112.84.178 1.098.062.243.076.118.153.455l.152.697c.353 1.251.841 3.005.891 3.187.641 2.311 1.044 3.409 1.501 4.821.055.023.118.033.153.081s.073.107.102.16c.036.069.084.139.127.241l.051.134c0 .007.025.02.025.027v.054c.126.32.272.731.484 1.339.004.013.071.23.101.321.143.292.198.431.357.75.008.018-.009.036 0 .054.641 1.291.749 1.837 1.145 2.759.056.087.038.09.101.187.959 1.483 1.415 2.458 1.73 3.375.048-.091.109-.175.153-.268l2.443 6c1.628 4 4.206 8.571 7.735 13.714 3.528 5.143 9.092 11.143 16.691 18 7.599 6.857 15.334 12.142 23.204 15.856 7.871 3.715 16.149 6.429 24.833 8.143 8.685 1.714 16.42 2.571 23.205 2.571 6.785 0 13.706-.571 20.762-1.714 7.057-1.143 13.842-2.714 20.355-4.714 6.514-2 13.842-5 21.984-9 8.142-4 16.691-9.428 25.647-16.285 8.956-6.857 15.741-12.857 20.355-18 4.614-5.142 9.499-11.571 14.656-19.285 5.156-7.714 11.534-18.999 19.133-33.856 7.599-14.857 14.113-28.999 19.541-42.428 5.428-13.428 11.67-30.713 18.727-51.855 7.056-21.143 18.319-57.713 33.789-109.712 15.47-51.998 26.19-85.712 32.161-101.14 5.971-15.428 11.399-27.714 16.284-36.856 4.885-9.143 7.328-14.714 7.328-16.714 0-2-.543-3.571-1.629-4.714-1.085-1.143-7.328-1.572-18.726-1.286-11.399.286-18.049.714-19.948 1.286-1.9.571-3.393 1.428-4.478 2.571-1.086 1.143-6.243 16-15.47 44.57-9.228 28.571-16.691 49.999-22.391 64.284-5.699 14.286-10.042 23.714-13.027 28.285-2.985 4.572-6.242 8.572-9.77 12-3.529 3.429-7.057 5.857-10.585 7.286-3.528 1.428-6.378 2-8.549 1.714-2.171-.286-4.478-1.572-6.921-3.857-2.442-2.286-3.935-6.286-4.478-12-.543-5.714 1.9-18.142 7.328-37.285 5.428-19.142 8.549-31.57 9.363-37.284.814-5.715 1.222-13.571 1.222-23.571 0-10-.679-18.571-2.036-25.714-1.357-7.142-3.257-13.857-5.699-20.142a110.096 110.096 0 0 0-8.956-18c-3.529-5.714-7.057-10.57-10.585-14.57-3.528-4-9.499-9-17.912-15a108.793 108.793 0 0 0-27.276-14.143c-9.771-3.428-17.505-5.571-23.205-6.428-5.699-.857-12.62-1.286-20.762-1.286Zm352.956 57.856c-2.986-.286-6.378.571-10.178 2.571-3.8 2-7.463 4.857-10.992 8.571-3.528 3.714-6.106 7.857-7.735 12.429-1.628 4.571-2.306 9.714-2.035 15.428.271 5.714 1.221 11.142 2.85 16.285a69.55 69.55 0 0 0 6.513 14.571c2.714 4.571 5.564 8.428 8.549 11.571 2.986 3.143.815 10-6.513 20.571-7.328 10.571-13.842 18.857-19.541 24.857-5.699 5.999-10.992 10.856-15.877 14.571-4.885 3.714-9.906 6.714-15.063 8.999-5.156 2.286-10.177 3.429-15.062 3.429s-8.549-.572-10.992-1.714a21.475 21.475 0 0 1-6.514-4.715c-1.899-1.999-3.256-4.428-4.071-7.285-.814-2.857 3.664-8.286 13.435-16.285 9.77-8 19.133-17.286 28.09-27.857 8.956-10.571 14.384-17.714 16.284-21.428a45.09 45.09 0 0 0 4.071-11.571c.814-4 1.221-7.857 1.221-11.571 0-3.714-.543-7-1.629-9.857-1.085-2.857-2.849-5.143-5.292-6.857-2.442-1.714-5.699-2.571-9.77-2.571s-8.685.857-13.842 2.571c-5.156 1.714-12.484 5.571-21.983 11.571s-17.234 12.714-23.205 20.143c-5.97 7.428-10.856 16.142-14.655 26.142-3.8 9.999-5.971 19.571-6.514 28.713-.543 9.143-.271 16.286.814 21.428 1.086 5.143 2.714 9.857 4.886 14.143 2.171 4.285 4.342 7.571 6.513 9.857 2.171 2.285 4.885 4.285 8.142 6 3.257 1.714 7.735 2.714 13.434 2.999 5.7.286 9.635.143 11.806-.428 2.172-.572 5.293-1.714 9.364-3.429 4.071-1.714 9.091-4.571 15.062-8.571s13.57-10.428 22.798-19.285c9.227-8.857 16.284-16.285 21.169-22.285 4.885-6 9.77-12.857 14.656-20.571 4.885-7.714 7.735-11.571 8.549-11.571.814 0 2.714 1.428 5.699 4.285l4.478 4.286-8.549 8.571c-5.699 5.714-10.72 12.428-15.063 20.143-4.342 7.714-7.327 14.999-8.956 21.856-1.628 6.857-2.442 12.571-2.442 17.143 0 4.571.542 8.999 1.628 13.285 1.086 4.286 2.578 8 4.478 11.143 1.9 3.142 3.664 5.428 5.292 6.856 1.629 1.429 4.479 3 8.55 4.715 4.071 1.714 9.499 2.428 16.284 2.142 6.785-.285 13.841-1.857 21.169-4.714 7.328-2.857 12.756-5.571 16.284-8.142 3.528-2.572 7.599-6.857 12.213-12.857 4.614-6 7.87-11.571 9.77-16.714 1.9-5.143 3.121-11.428 3.664-18.857.543-7.428.543-12.856 0-16.285-.543-3.428-1.9-7.857-4.071-13.285-2.171-5.429-4.342-9.714-6.514-12.857-2.171-3.143-6.377-7.286-12.62-12.428-6.242-5.143-9.363-8-9.363-8.572 0-.571 6.378-4.142 19.134-10.714 12.756-6.571 26.461-12.142 41.117-16.713 14.655-4.572 29.854-8 45.595-10.286 15.741-2.286 29.583-3.286 41.524-3 11.942.286 21.576 1.143 28.904 2.572 7.328 1.428 13.977 3.428 19.948 5.999 5.971 2.572 10.72 5.286 14.249 8.143a33.964 33.964 0 0 1 8.549 10.285c2.171 4 3.528 8.857 4.071 14.571.542 5.715 1.628 9.715 3.256 12 1.629 2.286 3.529 3.857 5.7 4.714 2.171.857 4.342 1.143 6.513.857 2.172-.285 4.207-1.714 6.107-4.285 1.9-2.571 2.714-5.429 2.443-8.571-.272-3.143-1.086-6.429-2.443-9.857-1.357-3.429-4.885-8.143-10.585-14.143-5.699-6-12.755-10.999-21.169-14.999-8.413-4-18.591-7.143-30.532-9.429-11.942-2.285-24.426-3.428-37.453-3.428-13.028 0-27.412 1.286-43.153 3.857s-30.804 6.285-45.188 11.142c-14.384 4.857-25.647 9.286-33.789 13.286-8.142 4-14.249 7.428-18.32 10.285s-6.649 4.286-7.735 4.286c-1.085 0-5.021-3.143-11.806-9.428-6.785-6.286-9.499-11.714-8.142-16.286 1.357-4.571 2.307-9.428 2.85-14.571.543-5.143-.407-11.142-2.85-17.999-2.442-6.857-4.885-11.429-7.327-13.714-2.443-2.286-5.157-3.572-8.142-3.857Zm-1.629 7.714c2.986.286 5.428 1.428 7.328 3.428 1.9 2 3.392 4.143 4.478 6.429 1.086 2.285 1.764 5.571 2.036 9.857.271 4.285-.408 9.285-2.036 14.999-.814 2.857-1.63 5.714-2.443 8.571l-6.92-7.714c-4.614-5.142-7.871-9.714-9.771-13.714-1.899-4-2.714-7.857-2.442-11.571.271-3.714 1.221-6.428 2.849-8.142 1.629-1.715 3.936-2.429 6.921-2.143Zm-61.065 37.285c1.9 0 3.121.285 3.664.857.543.571.95 2.142 1.221 4.714.272 2.571-.135 6.143-1.221 10.714-1.086 4.571-3.257 10.714-6.514 18.428a93.353 93.353 0 0 1-12.62 21.428c-5.156 6.571-9.77 11.428-13.841 14.571-4.071 3.143-7.871 5.571-11.399 7.286l-5.292 2.571.407-5.571c.271-3.715 1.221-8.429 2.85-14.143 1.628-5.714 4.206-12.428 7.735-20.142 3.528-7.714 6.785-13.857 9.77-18.428 2.985-4.572 5.971-8.429 8.956-11.571 2.986-3.143 5.971-5.715 8.956-7.715 2.986-1.999 5.428-2.999 7.328-2.999Zm72.871 59.034c2.171-.072 4.342.964 6.514 3.107 4.342 4.285 8.549 9.857 12.62 16.714 4.071 6.857 6.92 13.142 8.549 18.856 1.628 5.714 2.442 10.857 2.442 15.428 0 4.572-.678 9-2.035 13.286-1.357 4.285-3.935 8.714-7.735 13.285-3.8 4.572-7.463 8-10.992 10.286-3.528 2.285-7.599 3.857-12.213 4.714-4.613.857-9.227.286-13.841-1.714-4.614-2-8.006-4.429-10.178-7.286-2.171-2.857-3.935-6.428-5.292-10.714a43.748 43.748 0 0 1-2.035-13.285c0-4.572.542-9.143 1.628-13.714 1.086-4.572 2.85-9.571 5.292-15 2.443-5.428 5.428-10.714 8.957-15.857a118.439 118.439 0 0 1 11.805-14.571c2.172-2.285 4.343-3.464 6.514-3.535Z"
-						fill="#326ce5" />
-				</svg>
+                        <p
+                            style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+                            class="mt-8"
+                        >
+                            Here’s another fun stat - we’ve got a
+                            <strong><a href="/money-back-guarantee">14-Day
+                                    Money-back Guarantee</a></strong>, where you
+                            aren’t happy with the seminar for whatever reason,
+                            you can get a full, 100% refund - no questions
+                            asked. And out of 1769+ students over 14 years of
+                            live cohorts, only 1 person has ever taken us up on
+                            this guarantee, that too, for a personal health
+                            reason. That’s a 0.05% refund rate.
+                            <br /><br />
+                            For context, most online courses have a 7-15% refund
+                            rate. And the traditional advice in the world of
+                            marketing is that if your refund rate is less than
+                            10%, you should raise your prices because your
+                            course is too cheap.
+                            <br /><br />
+                            Ours is 0.05%. Just sayin’ 😉
+                        </p>
 
-				<section class="p-outer">
-					<div class="p-inner text-center">
-						<h2>But how? Success is rarely easy.</h2>
-						<div class="mermaid text-center mt-8">
+                        <div class="mt-8">&nbsp;</div>
+                    </div>
+                </section>
+
+                <div class="text-center mt-8">
+                    <h2
+                        style="display: inline-block; vertical-align: middle;"
+                        class="gradient-1"
+                    >You, too, can build a career in the cloud.</h2>
+                </div>
+
+                {{! REACT DIV }}
+                {{! <div id="swooshid">\</div> }}
+
+                <svg
+                    viewBox="0 0 1000 634"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <defs>
+                        <filter
+                            color-interpolation-filters="sRGB"
+                            filterUnits="userSpaceOnUse"
+                            height="559.843"
+                            id="a"
+                            width="809.1"
+                            x="98.484"
+                            y="42.03"
+                        >
+                            <feDropShadow
+                                dx="0"
+                                dy="10"
+                                flood-color="#000"
+                                flood-opacity=".333"
+                                in="SourceGraphic"
+                                result="Shadow"
+                                stdDeviation="5"
+                            ></feDropShadow>
+                        </filter>
+                    </defs>
+                    <path
+                        d="M256.293 44.53c-8.142 0-17.641 1-28.497 3-10.856 2-21.033 4.857-30.532 8.571-9.499 3.714-19.677 9.143-30.533 16.285-10.856 7.143-19.269 14-25.24 20.571-5.971 6.572-10.992 13.857-15.063 21.857s-6.92 15.714-8.549 23.142c-1.628 7.429-2.442 14.857-2.442 22.285 0 7.429.542 14.143 1.628 20.143 1.086 6 2.307 10.999 3.664 14.999 1.357 4 3.664 9 6.921 15 3.256 6 6.106 10.285 8.549 12.857 2.442 2.571 5.292 4.714 8.549 6.428 3.257 1.714 6.378 2.429 9.363 2.143 2.985-.286 5.021-1.429 6.107-3.429 1.085-1.999 1.085-4.857 0-8.571-1.086-3.714-4.75-7.857-10.992-12.428-6.242-4.571-10.856-8.571-13.842-12-2.985-3.428-5.428-7-7.327-10.714-1.9-3.714-3.529-8.142-4.886-13.285-1.357-5.143-2.035-10.857-2.035-17.142 0-6.286.543-12 1.628-17.143 1.086-5.143 2.714-10.285 4.886-15.428 2.171-5.143 4.885-10.143 8.142-15a103.835 103.835 0 0 1 10.991-13.714c4.071-4.285 8.142-8 12.213-11.142 4.071-3.143 11.942-7.714 23.612-13.714 11.67-6 22.662-10.428 32.975-13.285 10.313-2.858 20.762-4.429 31.347-4.715 10.584-.285 19.948.715 28.09 3 8.142 2.286 15.334 5.429 21.576 9.429 6.242 4 11.263 8 15.063 12 3.799 4 6.92 7.856 9.363 11.57 2.443 3.715 5.292 9.714 8.549 18 3.257 8.285 5.564 17.142 6.921 26.571 1.357 9.428 1.764 19.571 1.221 30.427-.543 10.857-1.764 20.857-3.664 30-1.9 9.142-4.342 17.856-7.328 26.142-2.985 8.285-5.156 15.571-6.513 21.856-1.357 6.286-2.036 12.572-2.036 18.857 0 6.286.814 11.857 2.443 16.714 1.628 4.857 3.664 8.571 6.106 11.143 2.443 2.571 5.021 4.428 7.735 5.571 2.714 1.143 5.7 1.857 8.956 2.143 3.257.285 7.193-.143 11.806-1.286 4.614-1.143 10.721-4.286 18.32-9.428 7.599-5.143 13.977-10.714 19.133-16.714 5.157-6 9.228-11.714 12.213-17.143 2.986-5.428 4.75-8.285 5.293-8.571l.814-.428v.857c0 .571-6.649 26.713-19.948 78.426s-24.019 89.855-32.161 114.426c-8.142 24.571-14.791 42.57-19.948 53.998-5.156 11.429-9.906 20.571-14.248 27.428-4.343 6.857-8.549 12.571-12.62 17.143-4.071 4.571-9.364 9.428-15.877 14.571a123.613 123.613 0 0 1-20.762 13.285c-7.328 3.714-16.284 6.857-26.869 9.429-10.584 2.571-20.219 3.857-28.904 3.857-8.685 0-18.319-1.429-28.904-4.286-10.585-2.857-20.084-7-28.497-12.428-8.413-5.429-15.741-12-21.983-19.714-5.982-7.392-10.816-15.457-14.554-24.16-.007-.01-.019-.017-.026-.027a24.197 24.197 0 0 1-3.18-6.616c-.023-.076.027-.139.025-.214-.451-1.11-.905-2.285-1.272-3.67-.295-.935-.441-1.816-.61-2.705a27.848 27.848 0 0 1-1.527-6.241c-.009-.035-.016-.072-.026-.107-.112-.435-.243-.873-.356-1.312a2.6 2.6 0 0 0-.051.053c-.064-.34-.139-.676-.203-1.018-.732-3.053-1.107-5.9-1.145-8.571-.092.057-.189.103-.28.161l-.407-2.572c-.272-1.714-.407-3-.407-3.857v-1.285h.28c-.006-.092.005-.178 0-.268-.241-2.835-.262-5.663.152-8.25.008-.048.062-.063.077-.107-.02-1.042-.026-2.144-.128-2.946a.815.815 0 0 1 .153-.59c-.316-3.384-.018-6.514 1.094-8.919.011-.025.036-.034.051-.054l.025-.616c.085-1.739.23-3.062.509-4.339.037-.167.144-.294.255-.402-.01-.026-.014-.057-.026-.08.033-.012.07-.013.102-.027.01-.004.015-.023.026-.027a44.07 44.07 0 0 1 1.195-4.741c.076-.378.092-.732.204-1.125.269-2.058.582-3.908 1.094-5.598.016-.052.077-.059.102-.107.068-.267.042-.534.127-.803.814-2.572 2.85-7.429 6.107-14.571 3.256-7.143 6.649-13.286 10.177-18.428 3.528-5.143 8.006-10.572 13.434-16.286 5.428-5.714 10.585-10.428 15.47-14.142 4.885-3.714 10.856-7.429 17.913-11.143 7.056-3.714 13.705-6.571 19.947-8.571 6.243-2 16.149-3.714 29.719-5.143 13.57-1.428 23.883-1.714 30.939-.857 7.057.857 13.163 2.286 18.32 4.286 5.156 2 9.77 4.857 13.841 8.571 4.071 3.714 7.057 8.143 8.956 13.285 1.9 5.143 2.714 9.714 2.443 13.714-.271 4-1.628 8.286-4.071 12.857-2.443 4.571-3.664 8.286-3.664 11.143 0 2.857.679 5.285 2.036 7.285s2.985 3.143 4.885 3.429c1.9.285 3.392.142 4.478-.429 1.085-.571 2.307-1.714 3.664-3.428 1.357-1.715 2.578-4.429 3.664-8.143 1.085-3.714 1.628-8.428 1.628-14.143 0-5.714-1.086-11.571-3.257-17.571-2.171-5.999-5.021-10.999-8.549-14.999-3.528-4-9.092-7.857-16.691-11.571-7.599-3.714-15.063-6.143-22.39-7.286-7.328-1.143-15.606-1.571-24.834-1.285-9.227.285-17.912 1.285-26.054 2.999-8.142 1.715-14.927 3.572-20.355 5.572-5.428 2-13.163 6-23.205 11.999-10.041 6-19.405 13.429-28.089 22.286-8.685 8.856-14.656 15.856-17.913 20.999-3.257 5.143-5.699 9.714-7.328 13.714l-2.442 6c-.033-.028-.069-.05-.102-.081-.232.685-.369 1.271-.662 2.036-.206.542-.323.862-.763 1.982a.742.742 0 0 1-.432.429c.012.442.025.884-.077 1.205-.08.255-.312.37-.534.509-.231.881-.723 2.246-.891 3.134-.066.352-.343.556-.661.589-.398 1.824-.872 4.439-1.323 6.134-.019.072-.093.103-.127.161v.026a2.57 2.57 0 0 1-.128 1.018c-.035.112-.066.109-.101.214-.365 3.66-.89 7.41-1.629 11.277-.012.065-.101.055-.127.107-.4 5.368-.861 11.322-.941 12.375-.022.278-.19.461-.408.589-.105 1.124-.251 1.908-.381 2.732.046 1.339.097 2.487.127 3.214a.798.798 0 0 1-.178.509c.032.689.069 1.282.102 2.116.301.805.544 1.922.687 3.723l.407 5.143h-.229c.073.206.151.433.203.67.066.27.171.588.229.857.151.685.096 1.176.178 1.794.532.568.954 1.446 1.247 2.679.165.693.132 1.438.153 2.17.028.035.08.037.102.08.272.545.366 1.083.483 2.196.004.04-.004.041 0 .081.063.603.112.84.178 1.098.062.243.076.118.153.455l.152.697c.353 1.251.841 3.005.891 3.187.641 2.311 1.044 3.409 1.501 4.821.055.023.118.033.153.081s.073.107.102.16c.036.069.084.139.127.241l.051.134c0 .007.025.02.025.027v.054c.126.32.272.731.484 1.339.004.013.071.23.101.321.143.292.198.431.357.75.008.018-.009.036 0 .054.641 1.291.749 1.837 1.145 2.759.056.087.038.09.101.187.959 1.483 1.415 2.458 1.73 3.375.048-.091.109-.175.153-.268l2.443 6c1.628 4 4.206 8.571 7.735 13.714 3.528 5.143 9.092 11.143 16.691 18 7.599 6.857 15.334 12.142 23.204 15.856 7.871 3.715 16.149 6.429 24.833 8.143 8.685 1.714 16.42 2.571 23.205 2.571 6.785 0 13.706-.571 20.762-1.714 7.057-1.143 13.842-2.714 20.355-4.714 6.514-2 13.842-5 21.984-9 8.142-4 16.691-9.428 25.647-16.285 8.956-6.857 15.741-12.857 20.355-18 4.614-5.142 9.499-11.571 14.656-19.285 5.156-7.714 11.534-18.999 19.133-33.856 7.599-14.857 14.113-28.999 19.541-42.428 5.428-13.428 11.67-30.713 18.727-51.855 7.056-21.143 18.319-57.713 33.789-109.712 15.47-51.998 26.19-85.712 32.161-101.14 5.971-15.428 11.399-27.714 16.284-36.856 4.885-9.143 7.328-14.714 7.328-16.714 0-2-.543-3.571-1.629-4.714-1.085-1.143-7.328-1.572-18.726-1.286-11.399.286-18.049.714-19.948 1.286-1.9.571-3.393 1.428-4.478 2.571-1.086 1.143-6.243 16-15.47 44.57-9.228 28.571-16.691 49.999-22.391 64.284-5.699 14.286-10.042 23.714-13.027 28.285-2.985 4.572-6.242 8.572-9.77 12-3.529 3.429-7.057 5.857-10.585 7.286-3.528 1.428-6.378 2-8.549 1.714-2.171-.286-4.478-1.572-6.921-3.857-2.442-2.286-3.935-6.286-4.478-12-.543-5.714 1.9-18.142 7.328-37.285 5.428-19.142 8.549-31.57 9.363-37.284.814-5.715 1.222-13.571 1.222-23.571 0-10-.679-18.571-2.036-25.714-1.357-7.142-3.257-13.857-5.699-20.142a110.096 110.096 0 0 0-8.956-18c-3.529-5.714-7.057-10.57-10.585-14.57-3.528-4-9.499-9-17.912-15a108.793 108.793 0 0 0-27.276-14.143c-9.771-3.428-17.505-5.571-23.205-6.428-5.699-.857-12.62-1.286-20.762-1.286Zm352.956 57.856c-2.986-.286-6.378.571-10.178 2.571-3.8 2-7.463 4.857-10.992 8.571-3.528 3.714-6.106 7.857-7.735 12.429-1.628 4.571-2.306 9.714-2.035 15.428.271 5.714 1.221 11.142 2.85 16.285a69.55 69.55 0 0 0 6.513 14.571c2.714 4.571 5.564 8.428 8.549 11.571 2.986 3.143.815 10-6.513 20.571-7.328 10.571-13.842 18.857-19.541 24.857-5.699 5.999-10.992 10.856-15.877 14.571-4.885 3.714-9.906 6.714-15.063 8.999-5.156 2.286-10.177 3.429-15.062 3.429s-8.549-.572-10.992-1.714a21.475 21.475 0 0 1-6.514-4.715c-1.899-1.999-3.256-4.428-4.071-7.285-.814-2.857 3.664-8.286 13.435-16.285 9.77-8 19.133-17.286 28.09-27.857 8.956-10.571 14.384-17.714 16.284-21.428a45.09 45.09 0 0 0 4.071-11.571c.814-4 1.221-7.857 1.221-11.571 0-3.714-.543-7-1.629-9.857-1.085-2.857-2.849-5.143-5.292-6.857-2.442-1.714-5.699-2.571-9.77-2.571s-8.685.857-13.842 2.571c-5.156 1.714-12.484 5.571-21.983 11.571s-17.234 12.714-23.205 20.143c-5.97 7.428-10.856 16.142-14.655 26.142-3.8 9.999-5.971 19.571-6.514 28.713-.543 9.143-.271 16.286.814 21.428 1.086 5.143 2.714 9.857 4.886 14.143 2.171 4.285 4.342 7.571 6.513 9.857 2.171 2.285 4.885 4.285 8.142 6 3.257 1.714 7.735 2.714 13.434 2.999 5.7.286 9.635.143 11.806-.428 2.172-.572 5.293-1.714 9.364-3.429 4.071-1.714 9.091-4.571 15.062-8.571s13.57-10.428 22.798-19.285c9.227-8.857 16.284-16.285 21.169-22.285 4.885-6 9.77-12.857 14.656-20.571 4.885-7.714 7.735-11.571 8.549-11.571.814 0 2.714 1.428 5.699 4.285l4.478 4.286-8.549 8.571c-5.699 5.714-10.72 12.428-15.063 20.143-4.342 7.714-7.327 14.999-8.956 21.856-1.628 6.857-2.442 12.571-2.442 17.143 0 4.571.542 8.999 1.628 13.285 1.086 4.286 2.578 8 4.478 11.143 1.9 3.142 3.664 5.428 5.292 6.856 1.629 1.429 4.479 3 8.55 4.715 4.071 1.714 9.499 2.428 16.284 2.142 6.785-.285 13.841-1.857 21.169-4.714 7.328-2.857 12.756-5.571 16.284-8.142 3.528-2.572 7.599-6.857 12.213-12.857 4.614-6 7.87-11.571 9.77-16.714 1.9-5.143 3.121-11.428 3.664-18.857.543-7.428.543-12.856 0-16.285-.543-3.428-1.9-7.857-4.071-13.285-2.171-5.429-4.342-9.714-6.514-12.857-2.171-3.143-6.377-7.286-12.62-12.428-6.242-5.143-9.363-8-9.363-8.572 0-.571 6.378-4.142 19.134-10.714 12.756-6.571 26.461-12.142 41.117-16.713 14.655-4.572 29.854-8 45.595-10.286 15.741-2.286 29.583-3.286 41.524-3 11.942.286 21.576 1.143 28.904 2.572 7.328 1.428 13.977 3.428 19.948 5.999 5.971 2.572 10.72 5.286 14.249 8.143a33.964 33.964 0 0 1 8.549 10.285c2.171 4 3.528 8.857 4.071 14.571.542 5.715 1.628 9.715 3.256 12 1.629 2.286 3.529 3.857 5.7 4.714 2.171.857 4.342 1.143 6.513.857 2.172-.285 4.207-1.714 6.107-4.285 1.9-2.571 2.714-5.429 2.443-8.571-.272-3.143-1.086-6.429-2.443-9.857-1.357-3.429-4.885-8.143-10.585-14.143-5.699-6-12.755-10.999-21.169-14.999-8.413-4-18.591-7.143-30.532-9.429-11.942-2.285-24.426-3.428-37.453-3.428-13.028 0-27.412 1.286-43.153 3.857s-30.804 6.285-45.188 11.142c-14.384 4.857-25.647 9.286-33.789 13.286-8.142 4-14.249 7.428-18.32 10.285s-6.649 4.286-7.735 4.286c-1.085 0-5.021-3.143-11.806-9.428-6.785-6.286-9.499-11.714-8.142-16.286 1.357-4.571 2.307-9.428 2.85-14.571.543-5.143-.407-11.142-2.85-17.999-2.442-6.857-4.885-11.429-7.327-13.714-2.443-2.286-5.157-3.572-8.142-3.857Zm-1.629 7.714c2.986.286 5.428 1.428 7.328 3.428 1.9 2 3.392 4.143 4.478 6.429 1.086 2.285 1.764 5.571 2.036 9.857.271 4.285-.408 9.285-2.036 14.999-.814 2.857-1.63 5.714-2.443 8.571l-6.92-7.714c-4.614-5.142-7.871-9.714-9.771-13.714-1.899-4-2.714-7.857-2.442-11.571.271-3.714 1.221-6.428 2.849-8.142 1.629-1.715 3.936-2.429 6.921-2.143Zm-61.065 37.285c1.9 0 3.121.285 3.664.857.543.571.95 2.142 1.221 4.714.272 2.571-.135 6.143-1.221 10.714-1.086 4.571-3.257 10.714-6.514 18.428a93.353 93.353 0 0 1-12.62 21.428c-5.156 6.571-9.77 11.428-13.841 14.571-4.071 3.143-7.871 5.571-11.399 7.286l-5.292 2.571.407-5.571c.271-3.715 1.221-8.429 2.85-14.143 1.628-5.714 4.206-12.428 7.735-20.142 3.528-7.714 6.785-13.857 9.77-18.428 2.985-4.572 5.971-8.429 8.956-11.571 2.986-3.143 5.971-5.715 8.956-7.715 2.986-1.999 5.428-2.999 7.328-2.999Zm72.871 59.034c2.171-.072 4.342.964 6.514 3.107 4.342 4.285 8.549 9.857 12.62 16.714 4.071 6.857 6.92 13.142 8.549 18.856 1.628 5.714 2.442 10.857 2.442 15.428 0 4.572-.678 9-2.035 13.286-1.357 4.285-3.935 8.714-7.735 13.285-3.8 4.572-7.463 8-10.992 10.286-3.528 2.285-7.599 3.857-12.213 4.714-4.613.857-9.227.286-13.841-1.714-4.614-2-8.006-4.429-10.178-7.286-2.171-2.857-3.935-6.428-5.292-10.714a43.748 43.748 0 0 1-2.035-13.285c0-4.572.542-9.143 1.628-13.714 1.086-4.572 2.85-9.571 5.292-15 2.443-5.428 5.428-10.714 8.957-15.857a118.439 118.439 0 0 1 11.805-14.571c2.172-2.285 4.343-3.464 6.514-3.535Z"
+                        fill="#326ce5"
+                    ></path>
+                </svg>
+
+                <section
+                    class="p-outer"
+                    style="background-color: rgba(55,99,255,.06);"
+                >
+                    <div class="p-inner text-center">
+                        <h2>But how? Success is rarely easy.</h2>
+                        {{! prettier-ignore }}
+                        <div class="mermaid text-center mt-8">
 							graph TD;
 							U -.->|-- build --| S;
 							U -.->|-- network with --| N;
@@ -144,13 +402,19 @@
 							style S fill:#326ce5
 						</div>
 
-						<p class="mt-8"></p>
-						<p class="text-center" style="font-size: 2em; font-weight: 300; line-height: 1.5;">
-							You need to gain relevant skills, build evidence through rigorous,
-							diligent work, and demonstrate that to future employers/customers.</p>
-						<p class="mt-8"></p>
-
-						<div class="mermaid text-center">
+                        <p class="mt-8"></p>
+                        <p class="mt-8"></p>
+                        <p
+                            class="text-center"
+                            style="font-size: 2em; font-weight: 300; line-height: 1.5;"
+                        >
+                            We help you gain relevant skills, build evidence
+                            through rigorous, diligent work, and demonstrate
+                            that to future employers/customers.</p>
+                        <p class="mt-8"></p>
+                        <p class="mt-8"></p>
+                        {{! prettier-ignore }}
+                        <div class="mermaid text-center">
 							graph TD;
 							a[Gain relevant skills] --> W[Work hands-on\nwith rigor]
 							W --> X[Build a credible\nproject portfolio]
@@ -163,87 +427,154 @@
 							style Z fill:#326ce5
 						</div>
 
-						<h4 class="pb-8">&nbsp;</h4>
+                        <h4 class="pb-8">&nbsp;</h4>
 
-						{{!-- REACT DIV --}}
-						<div class="p-inner p-hero">
-							{{!-- <div id="handwritten"></div> --}}
+                        {{! REACT DIV }}
+                        <div class="p-inner p-hero">
+                            {{! <div id="handwritten"></div> }}
 
-							<div class="gradient-1" id="handwriting">
-								Let us collaborate<br />Hands-on<br />with real projects
-							</div>
-							{{!-- <h4 class="pb-8">We will collaborate hands-on, and I help you build and ship
+                            <div class="gradient-1" id="handwriting">
+                                Let us collaborate<br />Hands-on<br />with real
+                                projects
+                            </div>
+                            {{! <h4 class="pb-8">We will collaborate hands-on, and I help you build and ship
 								production grade cloud
-								services.</h4> --}}
-							<img class="mt-8" src="https://tcs-ghost.s3-us-west-2.amazonaws.com/progress.jpg"
-								alt="progress" />
-						</div>
+								services.</h4> }}
+                            <img
+                                class="mt-8"
+                                src="https://tcs-ghost.s3-us-west-2.amazonaws.com/progress.jpg"
+                                alt="progress"
+                            />
+                        </div>
 
-					</div>
-				</section>
+                    </div>
+                </section>
 
-			</div>
-		</div>
-	</section>
+            </div>
+        </div>
+    </section>
 
+    <section class="p-outer">
+        <div class="p-inner">
+            <div class="text-center">
+                <h2>What's actually in the seminar?</h2>
+                <h2>What would I take away when I enroll and complete?</h2>
+            </div>
+            <div class="mt-20">
+                {{! <h4>Great questions. 😊 Here are the details.</h4> }}
+                {{!-- <div class="mt-8"></div> --}}
+                <p
+                    class="text- center mt-8"
+                    style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+                >While the content from The Cloud Seminar is available on-demand
+                    as a subscription for participants, this year, again, I will
+                    personally run the Cloud Seminar live with you on Zoom.</p>
+                {{!-- <div class="mt-8"></div> --}}
+            </div>
+        </div>
+    </section>
 
+    <section class="p-outer">
+        <div class="p-inner p-hero">
+            <div class="p-hero-left">
+                <div class="text-center">
 
-	<section class="p-outer">
-		<div class="p-inner">
-			<div class="text-center">
-				<h2>What's actually in the seminar?</h2>
-				<h2>What would I take away when I enroll and complete?</h2>
-			</div>
-			<div class="mt-20">
-				<h4>Great questions. 😊 Here are the details.</h4>
-				<div class="mt-8"></div>
-				<p class="text- center mt-8" style="font-size: 1.6em; font-weight: 300; line-height: 1.6;">While the
-					content from The Cloud Seminar is available on-demand as a subscription for participants, this year,
-					again, I will personally run the Cloud Seminar live with you on Zoom.</p>
-				<div class="mt-8"></div>
-			</div>
-		</div>
-	</section>
+                    {{! REACT DIV }}
+                    <div class="text-center mt-8">
+                        {{! <b style="display: inline-block; vertical-align: middle;">Starting &rarr;</b> }}
+                        <div
+                            style="display: inline-block; vertical-align: middle;"
+                            id="startdate"
+                        ></div>
+                        <div
+                            style="display: inline-block; vertical-align: middle;"
+                        >
+                            <p class="gradient-underline">4:00 pm-7:00 pm
+                                Seattle Time</p>
+                            <b class="gradient-1">every Monday, Wednesday, and
+                                Friday</b>
+                        </div>
+                        <div
+                            style="display: inline-block; vertical-align: middle;"
+                            id="enddate"
+                        ></div>
+                    </div>
 
-	<section class="p-outer">
-		<div class="p-inner p-hero">
-			<div class="p-hero-left">
-				<div class="text-center">
-
-					{{!-- REACT DIV --}}
-					<div class="text-center mt-8">
-						{{!-- <b style="display: inline-block; vertical-align: middle;">Starting &rarr;</b> --}}
-						<div style="display: inline-block; vertical-align: middle;" id="startdate"></div>
-						<div style="display: inline-block; vertical-align: middle;">
-							<p class="gradient-underline">4:00 pm-7:00 pm Seattle Time</p>
-							<b class="gradient-1">every Monday, Wednesday, and Friday</b>
-						</div>
-						<div style="display: inline-block; vertical-align: middle;" id="enddate"></div>
-					</div>
-
-					{{!-- REACT DIV --}}
-					{{!-- <div id="swooshid"></div> --}}
-					<h3 class="text-center mt-8">24 live Zoom sessions</h3>
-					<h3 class="text-center mt-8">3-hour each</h3>
-					<h3 class="text-center mt-8">Thrice a week for 8 weeks.</h3>
+                    {{! REACT DIV }}
+                    {{! <div id="swooshid"></div> }}
+                    <h3 class="text-center mt-8">24 live Zoom sessions</h3>
+                    <h3 class="text-center mt-8">3-hour each</h3>
+                    <h3 class="text-center mt-8">Thrice a week for 8 weeks.</h3>
+                </div>
+                <h3 class="text-center underline">🗓️ The Weekly Zoom Schedule</h3>
+                {{! prettier-ignore }}
+                <div class="mermaid text-center">
+					%%{init: {  'logLevel': 'debug', 'theme': 'dark' ,
+								'themeVariables': {
+									'cScale0': '#326ce5',
+									'cScale1': '#7961c3',
+									'cScale2': '#CC559A'
+								} } }%%
+					timeline
+					Monday : 4pm-7pm Live Zoom with Nilesh
+					Wednesday : 4pm-7pm Live Zoom with Nilesh
+					Friday : 4pm-7pm Live Zoom with Nilesh
+					{{!-- style Monday fill:#326ce5 --}}
 				</div>
-			</div>
+                <p class="underline text-center">Seattle Time Zone</p>
+            </div>
 
-			<div class="p-hero-right">
-				<h3 class="text-center mt-8">Plus</h3>
-				<h3 class="text-center mt-8">Open live Q&As</h3>
-				<h3 class="text-center mt-8">Hands-on exercises</h3>
-				<h3 class="text-center mt-8">Individual customized feedback</h3>
-				<h3 class="text-center mt-8">Real life project specific for your scenario</h3>
-				<h3 class="text-center mt-8">Help you <span class="highlight-yellow">supercharge your career in the
-						cloud</span></h3>
-				<h3 class="text-center mt-8">Connect with hundreds of other smart people on a similar career path</h3>
-				<h3 class="text-center mt-8">Build your portfolio of project as an evidence of your skills</h3>
-				<h3 class="text-center mt-8">Network with employers to showcase your portfolio</h3>
-				<h3 class="gradient-1 text-center mt-8">Land your dream career!</h3>
-			</div>
+            <div class="p-hero-right">
+                <h3 class="text-center mt-8">Plus</h3>
+                <h3 class="text-center mt-8">Open live Q&As</h3>
+                <h3 class="text-center mt-8">Hands-on exercises</h3>
+                <h3 class="text-center mt-8">Individual customized feedback</h3>
+                <h3 class="text-center mt-8">Real life project specific for your
+                    scenario</h3>
+                <h3 class="text-center mt-8">Help you
+                    <span class="highlight-yellow">supercharge your career in
+                        the cloud</span></h3>
+                <h3 class="text-center mt-8">Connect with hundreds of other
+                    smart people on a similar career path</h3>
+                <h3 class="text-center mt-8">Build a portfolio of projects as
+                    evidence of your skills</h3>
+                <h3 class="text-center mt-8">Network with employers to showcase
+                    your portfolio</h3>
+                <h3 class="gradient-1 text-center mt-8">Land your dream career!</h3>
+            </div>
 
-		</div>
-	</section>
+        </div>
+    </section>
+    <section class="p-outer">
+        <div class="p-inner">
+            <h3 class="text-center">Unsure if The Cloud Seminar is a good fit
+                for you?</h3>
+            <h3 class="text-center">Book a Free 1x1 Zoom Call with us</h3>
+            <p class="text-center">We get it. It's a big investment, and it
+                might be a hard decision.<br />
+                If that's the case, feel free to book a chill, no-pressure
+                10-minute call with our team.<br />
+                We'll be happy to honestly answer any questions you might have
+                about the course, and about whether it's right for you or not.</p>
 
-	</main>
+            <div id="SAMPLEdivID" style="height: 1700px;"></div>
+            <!-- Calendly inline widget begin -->
+            <div
+                class="calendly-inline-widget"
+                style="min-width:320px;height:580px;"
+                data-auto-load="false"
+            >
+                <script
+                    type="text/javascript"
+                    src="https://assets.calendly.com/assets/external/widget.js"
+                ></script>
+                <script>
+                    Calendly.initInlineWidget({ url:
+                    'https://calendly.com/nilesh?hide_gdpr_banner=1&hide_landing_page_details=1&hide_event_type_details=1',
+                    parentElement: document.getElementById('SAMPLEdivID'),
+                    prefill: {}, utm: {} });
+                </script>
+            </div>
+        </div>
+    </section>
+</main>
