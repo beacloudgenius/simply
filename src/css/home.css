@@ -282,3 +282,7 @@ svg[id^="mermaid"] {
   details.accordion[open] summary {
   	font-weight: 700;
   }
+
+.zoom:hover {
+	transform: scale(1.05);
+}
