@@ -308,23 +308,27 @@
                             style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
                             class="mt-8"
                         >
-                            Here’s another fun stat - we’ve got a
-                            <strong><a href="/money-back-guarantee">14-Day
-                                    Money-back Guarantee</a></strong>, where you
-                            aren’t happy with the seminar for whatever reason,
-                            you can get a full, 100% refund - no questions
-                            asked. And out of 1769+ students over 14 years of
-                            live cohorts, only 1 person has ever taken us up on
-                            this guarantee, that too, for a personal health
-                            reason. That’s a 0.05% refund rate.
+                            <em>
+                                Here’s another fun stat. We’ve got a
+                                <strong><a href="/money-back-guarantee">14-Day
+                                        Money-back Guarantee</a></strong>, where
+                                you aren’t happy with the seminar for whatever
+                                reason, you can get a full, 100% refund - no
+                                questions asked. And out of 1769+ students over
+                                14 years of live cohorts, only 1 person has ever
+                                taken us up on this guarantee, that too, for a
+                                personal health reason. That’s a 0.05% refund
+                                rate.</em>
                             <br /><br />
-                            For context, most online courses have a 7-15% refund
-                            rate. And the traditional advice in the world of
-                            marketing is that if your refund rate is less than
-                            10%, you should raise your prices because your
-                            course is too cheap.
-                            <br /><br />
-                            Ours is 0.05%. Just sayin’ 😉
+                            <blockquote>
+                                For context, most online courses have a 7-15%
+                                refund rate. And the traditional advice in the
+                                world of online education is that if your refund
+                                rate is less than 10%, you should raise your
+                                prices because your course is too cheap.
+                                <br /><br />
+                                Ours is 0.05%. Just sayin’ 😉
+                            </blockquote>
                         </p>
 
                         <div class="mt-8">&nbsp;</div>
@@ -462,14 +466,14 @@
             </div>
             <div class="mt-20">
                 {{! <h4>Great questions. 😊 Here are the details.</h4> }}
-                {{!-- <div class="mt-8"></div> --}}
+                {{! <div class="mt-8"></div> }}
                 <p
                     class="text- center mt-8"
                     style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
                 >While the content from The Cloud Seminar is available on-demand
                     as a subscription for participants, this year, again, I will
                     personally run the Cloud Seminar live with you on Zoom.</p>
-                {{!-- <div class="mt-8"></div> --}}
+                {{! <div class="mt-8"></div> }}
             </div>
         </div>
     </section>
@@ -545,6 +549,9 @@
 
         </div>
     </section>
+
+    {{> offer}}
+
     <section class="p-outer">
         <div class="p-inner">
             <h3 class="text-center">Unsure if The Cloud Seminar is a good fit
@@ -557,24 +564,16 @@
                 We'll be happy to honestly answer any questions you might have
                 about the course, and about whether it's right for you or not.</p>
 
-            <div id="SAMPLEdivID" style="height: 1700px;"></div>
-            <!-- Calendly inline widget begin -->
-            <div
+            <div id="Calendly"
                 class="calendly-inline-widget"
-                style="min-width:320px;height:580px;"
+                style="min-width:320px;height:650px;"
                 data-auto-load="false"
             >
-                <script
-                    type="text/javascript"
-                    src="https://assets.calendly.com/assets/external/widget.js"
-                ></script>
-                <script>
-                    Calendly.initInlineWidget({ url:
-                    'https://calendly.com/nilesh?hide_gdpr_banner=1&hide_landing_page_details=1&hide_event_type_details=1',
-                    parentElement: document.getElementById('SAMPLEdivID'),
-                    prefill: {}, utm: {} });
-                </script>
             </div>
+			{{!-- <iframe src="https://calendly.com/nilesh?hide_gdpr_banner=1&hide_landing_page_details=1&hide_event_type_details=1" width="100%" height="950" scrolling="no" frameborder="0"></iframe> --}}
+
+			{{!-- https://codepen.io/cloudgenius/pen/gOdWLLb --}}
+
         </div>
     </section>
 </main>
