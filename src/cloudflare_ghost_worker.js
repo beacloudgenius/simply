@@ -40,15 +40,15 @@ async function handleRequest(request) {
 		"\
             base-uri 'self'; \
             object-src 'self' https://s3-us-west-2.s3.amazonaws.com; \
-            img-src 'self' ghost.org *.supabase.co *.spacergif.org *.unsplash.com *.tenor.com *.gravatar.com *.ghost.org *.cloudgenius.app cloudgenius.app thecloudseminar.com *.amazonaws.com *.ytimg.com *.vimeocdn.com *.githubusercontent.com blob: data:; \
-            media-src blob: thecloudseminar.com hls.home.cloudgeni.us hls.cloudgenius.app *.amazonaws.com youtube.com *.vimeo.com *.vimeocdn.com; \
-            script-src * data: 'unsafe-eval' 'unsafe-inline' blob: https: 'self' *.vimeo.com *.chatra.io hi.cloudgenius.app storage.googleapis.com js.stripe.com *.stripe.com *.stripe.network;\
+            img-src 'self' ghost.org *.supabase.co *.spacergif.org *.unsplash.com *.tenor.com *.gravatar.com *.ghost.org *.cloudgenius.app cloudgenius.app thecloudseminar.com *.thecloudseminar.com *.amazonaws.com *.ytimg.com *.vimeocdn.com *.githubusercontent.com blob: data:; \
+            media-src blob: thecloudseminar.com *.thecloudseminar.com hls.home.cloudgeni.us hls.cloudgenius.app *.amazonaws.com youtube.com *.vimeo.com *.vimeocdn.com; \
+            script-src * data: 'unsafe-eval' 'unsafe-inline' blob: https: 'self' *.vimeo.com *.chatra.io hi.cloudgenius.app *.thecloudseminar.com storage.googleapis.com js.stripe.com *.stripe.com *.stripe.network;\
             frame-ancestors 'self'; \
             form-action 'self' *.cloudgenius.app formspree.io; \
-            style-src 'unsafe-inline' 'self' fonts.googleapis.com cdn.jsdelivr.net maxcdn.bootstrapcdn.com; \
-            default-src 'self' ghost.org/changelog.json ghost.org/explore/api/feed/ resources.ghost.io/resources/ghost/api/content/posts/ cdn.jsdelivr.net tcs-ghost.s3.us-west-2.amazonaws.com tenor.googleapis.com api.unsplash.com;  \
-            font-src 'self' *.gstatic.com ; \
-            frame-src 'self' js.stripe.com ghost.org/explore/ calendly.com platform.twitter.com player.vimeo.com www.youtube.com chat.chatra.io; \
+            style-src 'unsafe-inline' 'self' *.thecloudseminar.com fonts.googleapis.com cdn.jsdelivr.net maxcdn.bootstrapcdn.com; \
+            default-src 'self' *.thecloudseminar.com ghost.org/changelog.json ghost.org/explore/api/feed/ resources.ghost.io/resources/ghost/api/content/posts/ cdn.jsdelivr.net tcs-ghost.s3.us-west-2.amazonaws.com tenor.googleapis.com api.unsplash.com;  \
+            font-src 'self' *.gstatic.com *.thecloudseminar.com ; \
+            frame-src 'self' *.thecloudseminar.com js.stripe.com ghost.org/explore/ calendly.com platform.twitter.com player.vimeo.com www.youtube.com chat.chatra.io; \
             ",
 		// report-uri https://cloudgenius.report-uri.com;
 		// https://securityheaders.com/
