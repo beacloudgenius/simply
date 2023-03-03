@@ -572,10 +572,9 @@
                 data-auto-load="false"
             >
             </div>
-            {{! <iframe src="https://calendly.com/nilesh?hide_gdpr_banner=1&hide_landing_page_details=1&hide_event_type_details=1" width="100%" height="950" scrolling="no" frameborder="0"></iframe> }}
-
-            {{! https://codepen.io/cloudgenius/pen/gOdWLLb }}
-
+			{{!-- calendly --}}
+			<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+			<script type="text/javascript" src="{{asset "scripts/calendly.js" }}"></script>
         </div>
     </section>
 </main>
