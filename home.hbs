@@ -446,7 +446,7 @@
 								services.</h4> }}
                             <img
                                 class="mt-8"
-                                src="https://tcs-ghost.s3-us-west-2.amazonaws.com/progress.jpg"
+                                src="https://i.thecloudseminar.com/progress.jpg"
                                 alt="progress"
                             />
                         </div>
@@ -578,3 +578,10 @@
         </div>
     </section>
 </main>
+
+
+
+{{#if @member.paid}}
+    {{! Logged in, paying member: Redirect home }}
+    <script>window.location = '{{@site.url}}/page/2';</script>
+{{/if}}

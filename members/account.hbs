@@ -75,7 +75,9 @@
                         data-members-edit-billing
                         data-members-success="{{@site.url}}/account/?stripe=billing-update-success"
                         data-members-cancel="{{@site.url}}/account/?stripe=billing-update-cancel">Edit billing info</a></li>
-                <li class="w-1/2">
+
+                {{!-- <li class="w-1/2"> --}}
+
                     {{!-- {{cancel_link}} --}}
                     {{!-- {{cancel_link
                         class="button is-primary"
@@ -83,9 +85,14 @@
                         cancelLabel="Cancel!"
                         continueLabel="Continue!"
                     }} --}}
-                    <a class="cancel-link button is-primary" data-members-continue-subscription="sub_*****" href="javascript:">Continue!</a>
-                    <span class="cancel-error text-danger block mt-2" data-members-error></span>
-                </li>
+                    {{!--
+
+						Nilesh disabled this.
+
+					<a class="cancel-link button is-primary" data-members-continue-subscription="sub_*****" href="javascript:">Continue!</a>
+                    <span class="cancel-error text-danger block mt-2" data-members-error></span> --}}
+
+                {{!-- </li> --}}
             </ul>
         </div>
     {{/foreach}}
