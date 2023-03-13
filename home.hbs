@@ -1,14 +1,54 @@
 {{!< default}}
 <main id="mukhya">
+
+	<div class="lehar">
+		<!--Content before waves-->
+		<div class="inner-lehar">
+			<h1 class="mt-8">&nbsp;</h1>
+			<h1>Transform your career</h1>
+			<h2><em><span class="gradient-1">the right way, like a genius</span>✨</em></h2>
+		</div>
+
+		<!--Waves Container-->
+		<div>
+			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+				<defs>
+					<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+				</defs>
+				<g class="parallax">
+					<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+					<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+					<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+					<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+				</g>
+			</svg>
+		</div><!--Waves end-->
+	</div><!--lehar ends-->
+
+    <section class="p-outer" style="margin-top: -7%; padding-left: 10%; padding-right: 10%;">
+		<div>
+			<p style="font-size: 1.6em; font-weight: 300; line-height: 1.6;">I helped <span
+                        style="font-size: 1.6em; font-weight: 300; line-height: 1.5;"
+                        id="cggrads"
+                    ></span>
+                    participants
+                    <b style="font-size: 1.6em; font-weight: 300; line-height: 1.5;" class="gradient-1">successfully transform their career in cloud computing</b>
+                    through the corporate funded programs I have been running for
+                <em>Boeing, Microsoft, Expedia, Amazon, Hitachi, and more.</em>
+				<br>
+				<br>Starting this year, you can benefit even if you don't have a corporate sponsor.
+			</p>
+			<script>
+				let date = new Date();
+				document.getElementById("cggrads").innerHTML = Math.trunc((date.getFullYear() * 12 + 10 * date.getMonth()) - 22515);
+			</script>
+		</div>
+	</section>
+
     <section class="p-outer">
         <div class="p-inner p-hero">
             <div class="p-hero-left">
                 <div>
-                    <h1>Transform your career</h1>
-                    <h2><em>the
-                            <span class="gradient-1">right way, like a genius</span>
-                            ✨</em></h2>
-                    <h1 class="mt-8">&nbsp;</h1>
                     <h1 class="mt-8">Welcome to<br />The 2023 Cloud Seminar</h1>
                     {{! REACT DIV }}
                     <sub style="float: right"><em>Powered by</em>
@@ -50,28 +90,14 @@
     <section id="shuru" class="p-outer">
         <div class="p-inner">
             <div>
-                <p
-                    style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
-                ><span
-                        style="font-size: 2em; font-weight: 800; line-height: 1.5;"
-                        id="cggrads"
-                    ></span>
-                    participants
-                    <b class="gradient-1">realized cloud career dreams</b>
-                    via the programs I have been running since 2009 for
-                    <em>Boeing, Microsoft, Expedia, Amazon, Hitachi, and more.</em></p>
+
                 <p
                     style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
                     class="mt-8"
                 >
-                    Here are some of them.
+                    See how our past participants benefited:
                 </p>
-                <script>
-                    let date = new Date();
-                    document.getElementById("cggrads").innerHTML =
-                    Math.trunc((date.getFullYear() * 12 + 10 * date.getMonth())
-                    - 22517);
-                </script>
+
 
                 <!-- start testimonials -->
 
@@ -138,7 +164,7 @@
                 <section class="p-outer">
                     <div class="p-inner">
                         <div>
-                            <h2>Okay, so it has clearly worked for some people.<br
+                            <h2>Okay, so it has clearly worked for these people.<br
                                 /><br />
                                 <em>But,
                                     <span class="gradient-1">will it work for
@@ -169,7 +195,7 @@
                     class="p-outer"
                     style="background-color: rgba(55,99,255,.06);"
                 >
-                    <div class="p-inner">
+                    <div class="p-inner" style="margin-top: -7%; padding-left: 10%; padding-right: 10%;">
                         <h1>Who The Seminar Isn't For</h1>
                         <p
                             style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
