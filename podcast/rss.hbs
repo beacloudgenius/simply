@@ -8,19 +8,21 @@
 	<channel>
 		<title>{{@site.title}}</title>
 		<link>{{@site.url}}</link>
-		<description>{{@site.description}}</description>
+		<itunes:subtitle>powered by Cloud Genius®</itunes:subtitle>
+		<description>Confidently ship production cloud services like a genius ✨</description>
 		<language>{{@site.locale}}</language>
 		<copyright>{{@site.title}} Copyright {{date format="YYYY"}}</copyright>
 		<atom:link href="{{@site.url}}/podcast/rss/" rel="self" type="application/rss+xml" />
 		<lastBuildDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</lastBuildDate>
-		<itunes:author>{{@site.title}}</itunes:author>
-		<itunes:summary>{{@site.description}}</itunes:summary>
+		<itunes:author>Nilesh from Cloud Genius®</itunes:author>
+		<itunes:summary>Summary Confidently ship production cloud services like a genius ✨</itunes:summary>
 		<itunes:owner>
-			<itunes:name>The Cloud Seminar</itunes:name>
+			<itunes:name>LV Nilesh, Founder, Cloud Genius®</itunes:name>
 			<itunes:email>nilesh@thecloudseminar.com</itunes:email>
 		</itunes:owner>
 		<itunes:explicit>clean</itunes:explicit>
-		<itunes:image href="{{img_url @site.icon absolute=" true"}}" />
+		<itunes:image href="https://i.thecloudseminar.com/NL-podcast.jpg" />
+
 		<itunes:category text="Technology"></itunes:category>
 
 		{{#get "posts" filter="tag:podcast" include="tags,authors" as |episode|}}
@@ -37,7 +39,7 @@
 			<content:encoded>
 				<![CDATA[ {{content}} ]]>
 			</content:encoded>
-			<enclosure url="{{og_description}}" length="0" type="audio/mpeg" />
+			<enclosure url="{{og_description}}" length="1" type="audio/mpeg" />
 			<itunes:subtitle>{{custom_excerpt}}</itunes:subtitle>
 			<itunes:summary>
 				<![CDATA[ {{content}} ]]>
