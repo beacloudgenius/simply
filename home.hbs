@@ -29,12 +29,55 @@
 		<div class="inner-ghatnae">
 			<h1 class="mt-8">&nbsp;</h1>
 
-			<h3>Join us live every week</h3>
 
+
+
+
+
+			{{!-- members subscribe --}}
+			{{#if @site.members_enabled}}{{#unless @member}}
+			<div class="footer-items mb-8">
+				<h3 class="text-white mb-5 text-xl">{{t "Join me live every week"}}</h3>
+				<h6>Every Tuesday 7:30 PM Seattle<br />Every Wednesday 8:00 AM India</h6>
+				<p class="mb-4">{{t "Your email address to access the Microsoft Teams invitation."}}</p>
+
+				{{!-- Form subscribe --}}
+				<form class="simply-form w-64" data-members-form="subscribe">
+					<input class="footer-form-input" data-members-email type="email" placeholder="{{t " Your email address"}}"
+						aria-label="{{t " Your email address"}}" autocomplete="off" required />
+
+					<button class="button is-primary w-32 mt-4" type="submit">
+						<span class="button-content">Continue</span>
+						{{> "icons/loader"}}
+					</button>
+					{{!-- <p>No spam. Unsubscribe any time.</p> --}}
+
+					{{!-- success --}}
+					<div class="message-success p-2 rounded-md mt-4 hidden text-sm">
+						<span class="bg-success w-3 h-3 rounded-full inline-block"></span>
+						{{{t "<strong>Great!</strong> Check your inbox and click the link to confirm"}}}
+					</div>
+
+					{{!-- error --}}
+					<div class="message-error p-2 rounded-md mt-4 hidden text-sm">
+						<span class="bg-danger w-3 h-3 rounded-full inline-block"></span>
+						{{t "Please enter a valid email address!"}}
+					</div>
+				</form>
+			</div>
+			{{/unless}}{{/if}}
+
+
+
+
+			{{!-- if already subscribed --}}
+			{{#if @site.members_enabled}}{{#if @member}}
 
 
 
 <div class="max-w-xs">
+<h3 class="text-white mb-5 text-xl">{{t "Join me via Microsoft Teams"}}</h3>
+
 <a href="https://teams.microsoft.com/l/meetup-join/19%3a75832cabd9c14e298c7dcf64d546d454%40thread.skype/1683079703764?context=%7b%22Tid%22%3a%22abb54c36-485b-4cbf-a587-91295d12cef8%22%2c%22Oid%22%3a%22b6262709-c43e-4508-8315-64d6b19d0d95%22%7d">
 
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -116,6 +159,14 @@
 
 <div class="flex items-center"><small>Meeting ID: 260 750 922 783</small></div>
 <div class="flex items-center"><small>Passcode: KCBqUG</small></div>
+
+
+
+
+<p>See you live.</p>
+{{/if}}{{/if}}
+
+
 
 
 
