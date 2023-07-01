@@ -3,6 +3,7 @@ routes:
   /signin/: members/signin
   /account/: members/account
   /membership/: members/membership
+  /weekly/: weekly
 
   /featured/:
     controller: channel
