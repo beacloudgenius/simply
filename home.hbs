@@ -395,36 +395,73 @@
                     class="p-outer"
                     style="background-color: rgba(55,99,255,.06);"
                 >
-                    <div class="p-inner" style="margin-top: -7%; padding-left: 10%; padding-right: 10%;">
-                        <h1>This Seminar is not for you if:</h1>
-                        <p
-                            style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
-                            class="mt-8"
-                        >
-                            <ul
-                                style="list-style: inside; font-size: 1.6em; font-weight: 300; line-height: 1.6;"
-                            >
-                                <li
-                                    style="list-style-position: outside; margin: 20px 0;"
-                                >You are not willing to put in the time and effort to commit to focus, consistency and diligence.</li>
-                                <li
-                                    style="list-style-position: outside; margin: 20px 0;"
-                                >You’re looking for a genie in a bottle that will get you a job you want with little to no effort.</li>
-                                <li
-                                    style="list-style-position: outside; margin: 20px 0;"
-                                >You think this seminar is an easy road to riches in the cloud. Again, that’s not how it works.</li>
-                                <li
-                                    style="list-style-position: outside; margin: 20px 0;"
-                                >You expect a complete guarantee; that’s the catch. We will teach you the tools, techniques, systems, and processes that have worked for us and our participants.</li>
-                                <li
-                                    style="list-style-position: outside; margin: 20px 0;"
-                                >You are a hobbyist, wishing to flex your creative juices. You are welcome, only if you are willing to expend the required effort for it.
-                                </li>
-                            </ul>
-                            <div class="mt-8">&nbsp;</div>
-                            <div class="mt-8">&nbsp;</div>
-                        </p>
-                    </div>
+                 <div class="p-inner" style="margin-top: -7%; padding-left: 10%; padding-right: 10%;">
+  <h1 class="scroll-animation">This Seminar is not for you if:</h1>
+  <p
+    style="font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+    class="mt-8 scroll-animation"
+  >
+    <ul
+      style="list-style: inside; font-size: 1.6em; font-weight: 300; line-height: 1.6;"
+    >
+      <li
+        class="scroll-animation"
+        style="list-style-position: outside; margin: 20px 0;"
+      >You are not willing to put in the time and effort to commit to focus, consistency and diligence.</li>
+      <li
+        class="scroll-animation"
+        style="list-style-position: outside; margin: 20px 0;"
+      >You’re looking for a genie in a bottle that will get you a job you want with little to no effort.</li>
+      <li
+        class="scroll-animation"
+        style="list-style-position: outside; margin: 20px 0;"
+      >You think this seminar is an easy road to riches in the cloud. Again, that’s not how it works.</li>
+      <li
+        class="scroll-animation"
+        style="list-style-position: outside; margin: 20px 0;"
+      >You expect a complete guarantee; that’s the catch. We will teach you the tools, techniques, systems, and processes that have worked for us and our participants.</li>
+      <li
+        class="scroll-animation"
+        style="list-style-position: outside; margin: 20px 0;"
+      >You are a hobbyist, wishing to flex your creative juices. You are welcome, only if you are willing to expend the required effort for it.
+      </li>
+    </ul>
+    <div class="mt-8">&nbsp;</div>
+    <div class="mt-8">&nbsp;</div>
+  </p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.querySelectorAll(".scroll-animation");
+
+    function animateOnScroll() {
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var rect = element.getBoundingClientRect();
+        var isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+        if (isVisible && !element.classList.contains("animated")) {
+          element.classList.add("animated");
+          gsap.fromTo(
+            element,
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1, ease: "power4.out" }
+          );
+        } else if (!isVisible && element.classList.contains("animated")) {
+          element.classList.remove("animated");
+          gsap.to(element, { opacity: 0, y: -50, duration: 1, ease: "power4.out" });
+        }
+      }
+    }
+
+    window.addEventListener("scroll", animateOnScroll);
+    animateOnScroll();
+  });
+</script>
+
+
                 </section>
 
 
@@ -644,25 +681,50 @@
                 <p class="underline text-center">Seattle Time Zone</p>
             </div>
 
-            <div class="p-hero-right">
-                <h3 class="zoom text-center mt-8">Plus</h3>
-                <h3 class="zoom text-center mt-8">Open live Q&As</h3>
-                <h3 class="zoom text-center mt-8">Hands-on exercises</h3>
-                <h3 class="zoom text-center mt-8">Individual customized feedback</h3>
-                <h3 class="zoom text-center mt-8">Real life project specific for your
-                    scenario</h3>
-                <h3 class="zoom text-center mt-8">Help you
-                    <span class="highlight-yellow">supercharge your career in
-                        the cloud</span></h3>
-                <h3 class="zoom text-center mt-8">Connect with hundreds of other
-                    smart people on a similar career path</h3>
-                <h3 class="zoom text-center mt-8">Build a portfolio of projects as
-                    evidence of your skills</h3>
-                <h3 class="zoom text-center mt-8">Network with employers</h3>
-                <h3 class="zoom text-center mt-8">Showcase
-                    your portfolio as evidence</h3>
-                <h3 class="gradient-1 zoom text-center mt-8">Land your dream career!</h3>
-            </div>
+          <div class="p-hero-right">
+  <h3 class="scroll-animation zoom text-center mt-8">Plus</h3>
+  <h3 class="scroll-animation zoom text-center mt-8">Open live Q&As</h3>
+  <h3 class="scroll-animation zoom text-center mt-8">Hands-on exercises</h3>
+  <h3 class="scroll-animation zoom text-center mt-8">Individual customized feedback</h3>
+  <h3 class="scroll-animation zoom text-center mt-8">Real life project specific for your scenario</h3>
+  <h3 class="scroll-animation zoom text-center mt-8">Help you <span class="highlight-yellow">supercharge your career in the cloud</span></h3>
+  <h3 class="scroll-animation zoom text-center mt-8">Connect with hundreds of other smart people on a similar career path</h3>
+  <h3 class="scroll-animation zoom text-center mt-8">Build a portfolio of projects as evidence of your skills</h3>
+  <h3 class="scroll-animation zoom text-center mt-8">Network with employers</h3>
+  <h3 class="scroll-animation zoom text-center mt-8">Showcase your portfolio as evidence</h3>
+  <h3 class="scroll-animation gradient-1 zoom text-center mt-8">Land your dream career!</h3>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.querySelectorAll(".scroll-animation");
+
+    function animateOnScroll() {
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var rect = element.getBoundingClientRect();
+        var isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+        if (isVisible && !element.classList.contains("animated")) {
+          element.classList.add("animated");
+          gsap.fromTo(
+            element,
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1, ease: "power4.out" }
+          );
+        } else if (!isVisible && element.classList.contains("animated")) {
+          element.classList.remove("animated");
+          gsap.set(element, { opacity: 0, y: 50 });
+        }
+      }
+    }
+
+    window.addEventListener("scroll", animateOnScroll);
+    animateOnScroll();
+  });
+</script>
+
 
         </div>
     </section>
