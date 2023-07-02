@@ -175,16 +175,7 @@
             <div class="p-hero-right">
                 {{! Loads the your cover image as defined in Ghost admin }}
                 {{!-- <img src="{{img_url @site.cover_image size=" l"}}" alt="Pitcher plants" /> --}}
-                {{!-- <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe
-                        src="https://player.vimeo.com/video/436312312?autoplay=0&loop=1"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                        title="Caroll George"
-                    >
-                    </iframe>
-                </div> --}}
-                <div style="padding: 56.25% 0 0 0; position: relative;">
+              <div style="padding: 56.25% 0 0 0; position: relative;">
     <iframe
         id="video-player"
         src="https://player.vimeo.com/video/436312312?autoplay=0&loop=1"
@@ -194,7 +185,6 @@
     >
     </iframe>
 </div>
-
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var videoPlayer = document.getElementById("video-player");
@@ -231,43 +221,8 @@
 </script>
 </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var videoPlayer = document.getElementById("video-player");
-
-        function playVideo() {
-            videoPlayer.contentWindow.postMessage('{"method":"play"}', '*');
-        }
-
-        function pauseVideo() {
-            videoPlayer.contentWindow.postMessage('{"method":"pause"}', '*');
-        }
-
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        function handleScroll() {
-            if (isElementInViewport(videoPlayer)) {
-                playVideo();
-            } else {
-                pauseVideo();
-            }
-        }
-
-        window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Call the function initially to check video visibility on page load
-    });
-</script>
-
-                <script src="https://player.vimeo.com/api/player.js"></script>
-            </div>
+                {{!-- <script src="https://player.vimeo.com/api/player.js"></script> --}}
+            {{!-- </div> --}}
         </div>
     </section>
 
