@@ -731,6 +731,7 @@
 
     {{> offer}}
 
+
     <section class="p-outer">
         <div class="p-inner">
             <h3 class="text-center">Unsure if The Cloud Seminar is a good fit
@@ -755,6 +756,101 @@
 			<script type="text/javascript" src="{{asset "scripts/calendly.js" }}"></script>
         </div>
     </section>
+    <section class="faq-section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <h3 class="faq-question">What is the duration of the course?</h3>
+      <div class="faq-answer">
+        <p>The course duration is 12 weeks.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">I am a guy with a non-tech background .Can I take this course</h3>
+      <div class="faq-answer">
+        <p>The course duration is 12 weeks.</p>
+      </div>
+    </div>
+     <div class="faq-item">
+      <h3 class="faq-question">I am a guy with a non-tech background .Can I take this course</h3>
+      <div class="faq-answer">
+        <p>It's all about the efforts you can puton your work.If you are ready to put the effort.We are ready to help you in any possible way.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">What topics are covered in your cloud course?</h3>
+      <div class="faq-answer">
+        <p>Our cloud course covers a wide range of topics including cloud infrastructure, security, scalability, and more. Gain comprehensive knowledge and practical skills to excel in the field of cloud computing. Enroll now!</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-question">How can I enroll in the course?</h3>
+      <div class="faq-answer">
+        <p>To enroll in the course, please visit our website and follow the registration process.</p>
+      </div>
+    </div>
+
+    <!-- Add more FAQ items as needed -->
+
+  </div>
+</section>
+<style>
+
+.faq-section {
+  background-color: #f9f9f9;
+  padding: 40px;
+}
+
+.section-title {
+  text-align: center;
+  color: #333;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
+}
+
+.faq-question {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  color: #666;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+  $('.faq-question').on('click', function() {
+    $(this).siblings('.faq-answer').slideToggle();
+    $(this).parent('.faq-item').toggleClass('open');
+  });
+});
+
+</script>
 </main>
 
 
