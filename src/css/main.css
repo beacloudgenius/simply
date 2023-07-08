@@ -35,6 +35,7 @@
 @import "./components/story.css";
 @import "./components/code.css";
 /* @import "./components/modal.css"; */
+@import "./components/subscription-box.css";
 
 /* Pages
 /* ---------------------------------------------------------- */
@@ -66,3 +67,6 @@
 /* Variants
 /* ---------------------------------------------------------- */
 /* @import "tailwindcss/variants"; */
+
+/* custom home.hbs home page */
+@import "home.css"

@@ -1,19 +1,23 @@
 {
   "name": "simply",
-  "description": "simply theme for ghost by @GodoFredoNinja",
-  "demo": "https://godofredo.ninja",
+  "description": "simply theme for thecloudseminar.com",
+  "demo": "https://thecloudseminar.com",
   "version": "0.4.0",
   "engines": {
-    "ghost": ">=5.0.0"
+    "node": "18.x"
   },
+  "os": [
+    "darwin",
+    "linux"
+  ],
   "license": "GPL-3.0-or-later",
   "screenshots": {
     "desktop": "screenshot.jpg"
   },
   "author": {
-    "name": "GodoFredo",
-    "email": "hello@godofredo.ninja",
-    "url": "https://godofredo.ninja"
+    "name": "Nilesh",
+    "email": "hello@cloudgeni.us",
+    "url": "https://cloudgenius.app"
   },
   "gpm": {
     "type": "theme",
@@ -26,16 +30,15 @@
   "keywords": [
     "ghost",
     "theme",
-    "ghost-theme",
-    "GodoFredoNinja"
+    "ghost-theme"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/godofredoninja/simply"
+    "url": "https://github.com/beacloudgenius/simply"
   },
   "bugs": {
-    "url": "https://github.com/godofredoninja/simply/issues",
-    "email": "hello@godofredo.ninja"
+    "url": "https://github.com/beacloudgenius/simply/issues",
+    "email": "hello@cloudgeni.us"
   },
   "config": {
     "posts_per_page": 18,
@@ -182,57 +185,78 @@
     "lint": "yarn lint:js && yarn lint:css",
     "test": "yarn lint && gscan .",
     "scan": "gscan .",
-    "deploy": "gulp deploy"    
+    "deploy": "gulp deploy",
+    "clean": "gulp clean",
+    "zip": "gulp zipit",
+    "fix": "standard --fix",
+    "wdev": "wrangler dev src/cloudflare_ghost_worker.js",
+    "wpublish": "wrangler publish src/cloudflare_ghost_worker.js --name ghost",
+    "deploy-to-production": "rm -rf dist && yarn test && yarn prod && yarn deploy && yarn wpublish",
+    "dd": "gulp production"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.6",
-    "@babel/plugin-transform-runtime": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
-    "@babel/runtime": "^7.18.6",
-    "@tailwindcss/line-clamp": "^0.4.0",
-    "@tailwindcss/typography": "^0.5.4",
+    "@babel/core": "^7.21.0",
+    "@babel/plugin-transform-runtime": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/runtime": "^7.21.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
     "@tryghost/admin-api": "^1.13.2",
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.2",
     "babelify": "^10.0.0",
     "beeper": "^2.1.0",
     "browserify": "^17.0.0",
     "cross-env": "^7.0.3",
-    "cssnano": "^5.1.12",
-    "cssnano-preset-advanced": "^5.3.8",
+    "css-loader": "^6.7.3",
+    "cssnano": "^5.1.15",
+    "cssnano-preset-advanced": "^5.3.10",
     "del": "^6.1.1",
-    "dotenv": "^16.0.3",    
-    "gscan": "^4.31.2",
+    "dotenv": "^16.0.3",
+    "gscan": "^4.36.0",
     "gulp": "^4.0.2",
     "gulp-header": "^2.0.9",
     "gulp-if": "^3.0.0",
     "gulp-livereload": "^4.0.2",
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.1.3",
+    "gulp-replace": "^1.1.4",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-strip-comments": "^2.5.2",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.1.0",
     "merge-stream": "^2.0.0",
-    "postcss": "^8.4.14",
+    "node-sass": "^8.0.0",
+    "postcss": "^8.4.21",
     "postcss-discard-comments": "^5.1.2",
     "postcss-extend": "^1.0.5",
     "postcss-import": "^15.1.0",
-    "postcss-nested": "^6.0.0",
+    "postcss-nested": "^6.0.1",
     "precss": "^4.0.0",
     "pump": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass-loader": "^13.2.0",
     "standard": "^17.0.0",
-    "stylelint": "^14.9.1",
-    "stylelint-config-recommended": "^9.0.0",
+    "style-loader": "^3.3.1",
+    "stylelint": "^15.2.0",
+    "stylelint-config-recommended": "^10.0.1",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-stream": "^7.0.0",
+    "wrangler": "^2.10.0"
   },
   "dependencies": {
+    "@fontsource/homemade-apple": "^4.5.9",
     "infinite-scroll": "^4.0.1",
     "lazysizes": "^5.3.2",
     "medium-zoom": "^1.0.6",
+    "mermaid": "^9.4.0",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.28.0",
-    "tailwindcss": "^3.1.6"
+    "tailwindcss": "^3.2.7"
   }
 }

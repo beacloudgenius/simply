@@ -1,67 +1,35 @@
 <!DOCTYPE html>
 <!--
-    Design by:
+    Powered by:
     ——————————
-        GODO FREDO
-        ✉ https://godofredo.ninja
-        ✎ @GodoFredoNinja
-        ✈ Lima - Perú
+        Cloud Genius®
+        ✉ https://cloudgenius.app
+        ✎ @k9lvn
 -->
 <html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark"{{/match}}>
 <head>
     {{!-- Document Settings --}}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     {{!-- Page Meta --}}
     <title>{{meta_title}}</title>
 
     {{!-- Mobile Meta --}}
-    <meta name="HandheldFriendly" content="True" />
+    <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script>
-    {{#match @custom.color_scheme "Auto"}}
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-			document.querySelector('html').classList.add('dark');
-			localStorage.theme = 'dark';
-		} else {
-			document.querySelector('html').classList.remove('dark');
-			localStorage.theme = '';
-		}
-
-		window.matchMedia('(prefers-color-scheme: dark)')
-		.addEventListener(
-			'change',
-			function (e) {
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					document.querySelector('html').classList.add('dark');
-					localStorage.theme = 'dark';
-				} else {
-					document.querySelector('html').classList.remove('dark');
-					localStorage.theme = '';
-				}
-			}
-		)
-
-    {{else}}
-        if (localStorage.theme === 'dark') {
-            document.querySelector('html').classList.add('dark');
-        } else if (localStorage.theme === 'light') {
-            document.querySelector('html').classList.remove('dark');
-        }
-    {{/match}}
-    </script>
-
     {{!-- Fonts -> Inter=400,500,600,700 PT Serift=400,700 --}}
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-    <noscript><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
     {{!-- <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> --}}
 
     {{!-- Styles --}}
     <link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/>
     {{!-- <style>{{> "main-styles"}}</style> --}}
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/asciinema-player@3.0.1/dist/bundle/asciinema-player.min.css" />
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
@@ -90,6 +58,9 @@
         {{#match @custom.footer "No Secondary Navigation"}}{{>"layout/footer-not-menu"}}{{/match}}
     </div>
 
+	{{!-- REACT DIV --}}
+	{{!-- <div id="Aklilu">Aklilu</div> --}}
+
     {{!-- Loandig Bar --}}
     <div class="loadingBar top-0 fixed right-0 left-0 hidden"></div>
 
@@ -110,6 +81,95 @@
 
     {{!-- Main scripts --}}
     <script src="{{#is "post, page"}}{{asset "scripts/post.js"}}{{else}}{{asset "scripts/main.js"}}{{/is}}"></script>
+
+	{{!-- mermaid URL --}}
+	<script src="{{asset "scripts/mermaid.js" }}"></script>
+
+    <script>
+    {{#match @custom.color_scheme "Auto"}}
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.querySelector('html').classList.add('dark');
+			localStorage.theme = 'dark';
+		} else {
+			document.querySelector('html').classList.remove('dark');
+			localStorage.theme = '';
+		}
+
+		window.matchMedia('(prefers-color-scheme: dark)')
+		.addEventListener(
+			'change',
+			function (e) {
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					document.querySelector('html').classList.add('dark');
+					localStorage.theme = 'dark';
+				} else {
+					document.querySelector('html').classList.remove('dark');
+					localStorage.theme = '';
+				}
+			}
+		)
+    {{else}}
+        if (localStorage.theme === 'dark') {
+            document.querySelector('html').classList.add('dark');
+        } else if (localStorage.theme === 'light') {
+            document.querySelector('html').classList.remove('dark');
+        }
+    {{/match}}
+    </script>
+
+{{!-- {{#is "home"}} --}}
+	{{!-- REACT JS BUNDLE --}}
+    <script src="{{asset "built/main.bundle.js"}}"></script>
+{{!-- {{/is}} --}}
+
+	{{!-- Chatra --}}
+	<script>
+			window.ChatraSetup = {
+				colors: {
+					buttonText: '#f0f0f0', /* chat button text color */
+					buttonBg: '#CC559A'    /* chat button background color */
+				}
+			};
+	</script>
+
+	<script>
+			(function (d, w, c) {
+				w.ChatraID = 'dKwmML4zkf9sYCnMP';
+				var s = d.createElement('script');
+				w[c] = w[c] || function () {
+					(w[c].q = w[c].q || []).push(arguments);
+				};
+				s.async = true;
+				s.src = 'https://call.chatra.io/chatra.js';
+				if (d.head) d.head.appendChild(s);
+			})(document, window, 'Chatra');
+	</script>
+	{{!-- /Chatra --}}
+
+	{{!-- asciinema URL --}}
+	<script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.0.1/dist/bundle/asciinema-player.min.js"></script>
+
+	<script>
+	// const docDiv = document.getElementById('asciinema');
+	// const castURL = docDiv.getAttribute('src');
+	// AsciinemaPlayer.create(castURL, docDiv);
+
+	// Grab all asciinema divs
+	var htmlCollection = document.getElementsByClassName('asciinema')
+	Array.prototype.forEach.call(htmlCollection, function (element) {
+		{{!-- console.log(element); --}}
+		const cast = element.getAttribute('src');
+		{{!-- console.log(cast); --}}
+		const castURL = "https://tcs-ghost.s3.us-west-2.amazonaws.com/casts/" + cast;
+		{{!-- console.log(castURL); --}}
+		AsciinemaPlayer.create(castURL, element);
+	});
+
+	</script>
+
+	{{!-- btcpay URL --}}
+	{{!-- <script src="https://pay.cloudgenius.app/modal/btcpay.js"></script> --}}
 
     {{!-- Pagination Infinite Scroll --}}
     {{#match @custom.pagination "Infinite Scroll"}}{{#if pagination.next}}<script src="{{asset "scripts/pagination.js"}}" defer async></script>{{/if}}{{/match}}

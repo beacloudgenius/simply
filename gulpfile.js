@@ -1,6 +1,7 @@
 const { series, watch, src, dest, parallel } = require('gulp')
 const pump = require('pump')
 const del = require('del')
+const fs = require('fs')
 
 const rename = require('gulp-rename')
 const replace = require('gulp-replace')
@@ -32,6 +33,7 @@ const tailwindcss = require('tailwindcss')
 const postImport = require('postcss-import')
 const precss = require('precss')
 const postNesting = require('tailwindcss/nesting') // postcss-nested
+const webpackStream = require('webpack-stream')
 
 // sass
 // const sass = require('gulp-sass')(require('sass'))
@@ -111,7 +113,7 @@ function styles (done) {
 
 // Scripts
 function scripts (done) {
-  const files = ['main', 'post', 'prismjs', 'kusi-doc-post', 'pagination']
+  const files = ['main', 'post', 'prismjs', 'kusi-doc-post', 'pagination', 'mermaid', 'calendly']
 
   merge(files.map(function (file) {
     return pump([
@@ -146,6 +148,30 @@ function images (done) {
   ], handleError(done))
 }
 
+// Fonts
+function fonts (done) {
+  pump([
+    src('node_modules/@fontsource/homemade-apple/files/homemade-apple-all-400-normal.woff'),
+    dest('assets/fonts'),
+    livereload()
+  ], handleError(done))
+}
+
+async function mkdirbuilt (done) {
+  const folders = [
+    './assets',
+    './assets/built',
+    './assets/fonts'
+  ]
+
+  folders.forEach(dir => {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir)
+      console.log('📁  folder created:', dir)
+    }
+  })
+}
+
 function copyAmpStyle (done) {
   pump([
     src('assets/styles/amp.css'),
@@ -168,15 +194,17 @@ function copyMainStyle (done) {
 
 // ZIP
 function zipper (done) {
-  const filename = `${name}-v${version}.zip`
+//   const filename = `${name}-v${version}.zip`
+  const filename = `${name}.zip`
 
   pump([
     src([
       'assets/**',
       'locales/*.json',
       '*.hbs',
+      'members/**',
       'partials/**',
-      'podcast/**',      
+      'podcast/**',
       'LICENSE',
       'package.json',
       'README.md',
@@ -188,9 +216,6 @@ function zipper (done) {
     dest('dist')
   ], handleError(done))
 }
-
-
-
 
 // TryGhost Admin
 const dotenv = require('dotenv')
@@ -210,7 +235,8 @@ async function deploy (done) {
     console.log('name =', themeName)
     const apiVersion = process.env.API_VERSION || require('./package.json').engines['ghost-api']
     console.log(apiVersion)
-    const zipFile = `./dist/${themeName}-v${version}.zip`
+    // const zipFile = `./dist/${themeName}-v${version}.zip`
+    const zipFile = `./dist/${themeName}.zip`
     console.log('zip = ', zipFile)
 
     const api = new GhostAdminApi({
@@ -221,28 +247,42 @@ async function deploy (done) {
 
     await api.themes.upload({ file: zipFile }).then(response => console.log(response)).catch(error => console.error(error))
     console.log('uploaded')
-    await api.themes.activate(`${themeName}-${version}`).then(response => console.log(response)).catch(error => console.error(error))
+    // console.log(`${themeName}-${version}`);
+    // const blah = `${themeName}-${version}`;
+    // console.log(blah);
+    // await api.themes.activate('simply-v0.4.0').then(response => console.log(response)).catch(error => console.error(error))
+    await api.themes.activate(`${themeName}`).then(response => console.log(response)).catch(error => console.error(error))
     console.log('activated')
+
     done()
   } catch (err) {
-    console.log('error caught')
+    console.log('could not deploy - check .env')
     handleError(done)
   }
 }
 
+function webpack (done) {
+  pump([
+    src('assets/built'),
+    webpackStream(require('./webpack.config.js')),
+    dest('assets/built')
+  ], handleError(done))
+}
 
 const cssWatcher = () => watch('src/css/**', styles)
 const jsWatcher = () => watch(['src/js/**', '*.js'], scripts)
 const imgWatcher = () => watch('src/img/**', images)
 // const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs)
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], styles)
+const reactWatcher = () => watch(['react/**/*.*'], scripts)
 
-const compile = parallel(styles, scripts, images)
-const watcher = parallel(cssWatcher, jsWatcher, imgWatcher, hbsWatcher)
+const compile = parallel(styles, scripts, images, mkdirbuilt, fonts, webpack)
+const watcher = parallel(cssWatcher, jsWatcher, imgWatcher, hbsWatcher, reactWatcher)
 
 const build = series(clean, compile)
+// const production = series(build, copyAmpStyle, copyMainStyle, zipper, deploy)
 const production = series(build, copyAmpStyle, copyMainStyle, zipper)
 // const production = series(build)
-const development = series(build, serve, watcher)
+const development = series(build, copyAmpStyle, copyMainStyle, serve, watcher)
 
-module.exports = { build, development, production, deploy }
+module.exports = { build, development, production, clean, webpack, deploy }

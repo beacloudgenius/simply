@@ -1,0 +1,5 @@
+/*!
+ * simply v0.4.0
+ * Copyright 2023 Nilesh <hello@cloudgeni.us> (https://github.com/beacloudgenius/simply)
+ * Licensed under GPL-3.0-or-later
+ */!function r(i,l,o){function u(n,e){if(!l[n]){if(!i[n]){var t="function"==typeof require&&require;if(!e&&t)return t(n,!0);if(d)return d(n,!0);throw(e=new Error("Cannot find module '"+n+"'")).code="MODULE_NOT_FOUND",e}t=l[n]={exports:{}},i[n][0].call(t.exports,function(e){return u(i[n][1][e]||e)},t,t.exports,r,i,l,o)}return l[n].exports}for(var d="function"==typeof require&&require,e=0;e<o.length;e++)u(o[e]);return u}({1:[function(e,n,t){"use strict";Calendly.initInlineWidget({url:"https://calendly.com/nilesh?hide_gdpr_banner=1&hide_landing_page_details=1&hide_event_type_details=1",parentElement:document.getElementById("Calendly"),prefill:{},utm:{}})},{}]},{},[1]);

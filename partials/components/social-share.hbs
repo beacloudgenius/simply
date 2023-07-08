@@ -1,5 +1,28 @@
 <aside class="text-title flex items-center flex-none{{#unless class}} md:justify-end {{else}} {{class}}{{/unless}}">
     <span class="share-label text-gray-500 text-sm mr-2">{{t "Share"}}:</span>
+	{{!-- Share on SMS --}}
+	<a href="sms:?&body={{url absolute=" true"}}" target="_blank" rel="noopener noreferrer" class="godo-tracking md:hidden"
+		aria-label="{{t " Share on"}} SMS" data-event-category="Article" data-event-action="Share"
+		data-event-label="{{Tracking_name}} - SMS" data-event-non-interaction="true">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"
+			viewBox="0 0 66.146 66.146">
+			<defs>
+				<linearGradient id="a">
+					<stop style="stop-color:#0cbd2a;stop-opacity:1" offset="0" />
+					<stop style="stop-color:#5bf675;stop-opacity:1" offset="1" />
+				</linearGradient>
+				<linearGradient xlink:href="#a" id="b" x1="-25.273" y1="207.521" x2="-25.273" y2="152.998"
+					gradientUnits="userSpaceOnUse" gradientTransform="translate(-1.065 3.796) scale(.9821)" />
+			</defs>
+			<g transform="translate(59.483 -145.846)">
+				<rect ry="14.568" rx="14.568" y="145.846" x="-59.483" height="66.146" width="66.146"
+					style="opacity:1;fill:url(#b);fill-opacity:1;stroke:none;stroke-width:1.33634758;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+				<path
+					d="M-26.41 157.296a24.278 20.222 0 0 0-24.278 20.222 24.278 20.222 0 0 0 11.794 17.316 27.365 20.222 0 0 1-4.245 5.942 23.857 20.222 0 0 0 9.86-3.874 24.278 20.222 0 0 0 6.869.838 24.278 20.222 0 0 0 24.278-20.222 24.278 20.222 0 0 0-24.278-20.222z"
+					style="opacity:1;fill:#fff;fill-opacity:1;stroke:none;stroke-width:1.56409621;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+			</g>
+		</svg>
+	</a>
     {{!-- Share on Twitter --}}
     <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
         target="_blank"
@@ -11,20 +34,13 @@
         data-event-action="Share"
         data-event-label="{{Tracking_name}} - Twitter"
         data-event-non-interaction="true">
-        <svg width="30" height="30" class="fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 27a12 12 0 1 0 0-24 12 12 0 0 0 0 24zm4.95-16.17a2.67 2.67 0 0 0-4.6 1.84c0 .2.03.41.05.62a7.6 7.6 0 0 1-5.49-2.82 3 3 0 0 0-.38 1.34c.02.94.49 1.76 1.2 2.23a2.53 2.53 0 0 1-1.2-.33v.04c0 1.28.92 2.36 2.14 2.62-.23.05-.46.08-.71.1l-.21-.02-.27-.03a2.68 2.68 0 0 0 2.48 1.86A5.64 5.64 0 0 1 9 19.38a7.62 7.62 0 0 0 4.1 1.19c4.9 0 7.58-4.07 7.57-7.58v-.39c.52-.36.97-.83 1.33-1.38-.48.23-1 .37-1.53.43.56-.33.96-.86 1.15-1.48-.5.31-1.07.53-1.67.66z"/></svg>
-    </a>
-    {{!-- Share on Facebook --}}
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="godo-tracking"
-        title="{{t "Share on"}} Facebook"
-        aria-label="{{t "Share on"}} Facebook"
-        data-event-category="Article"
-        data-event-action="Share"
-        data-event-label="{{Tracking_name}} - Facebook"
-        data-event-non-interaction="true">
-        <svg width="30" height="30" viewBox="0 0 30 30" class="fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 27a12 12 0 1 0 0-24 12 12 0 0 0 0 24zm-1.23-6.03V15.6H12v-2.15h1.77v-1.6C13.77 10 14.85 9 16.42 9c.75 0 1.4.06 1.58.08v1.93h-1.09c-.85 0-1.02.43-1.02 1.05v1.38h2.04l-.27 2.15H15.9V21l-2.13-.03z"/></svg>
+		<svg width="24" height="24" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+		<style>
+			.st0{fill:#fff}.st1{fill:#f5bb41}.st2{fill:#2167d1}.st3{fill:#3d84f3}.st4{fill:#4ca853}.st5{fill:#398039}.st6{fill:#d74f3f}.st7{fill:#d43c89}.st8{fill:#b2005f}.st9{stroke:#000}.st10,.st11,.st9{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st10{fill-rule:evenodd;clip-rule:evenodd;stroke:#000}.st11{stroke:#040404}.st11,.st12,.st13{fill-rule:evenodd;clip-rule:evenodd}.st13{fill:#040404}.st14{fill:url(#SVGID_1_)}.st15{fill:url(#SVGID_2_)}.st16{fill:url(#SVGID_3_)}.st17{fill:url(#SVGID_4_)}.st18{fill:url(#SVGID_5_)}.st19{fill:url(#SVGID_6_)}.st20{fill:url(#SVGID_7_)}.st21{fill:url(#SVGID_8_)}.st22{fill:url(#SVGID_9_)}.st23{fill:url(#SVGID_10_)}.st24{fill:url(#SVGID_11_)}.st25{fill:url(#SVGID_12_)}.st26{fill:url(#SVGID_13_)}.st27{fill:url(#SVGID_14_)}.st28{fill:url(#SVGID_15_)}.st29{fill:url(#SVGID_16_)}.st30{fill:url(#SVGID_17_)}.st31{fill:url(#SVGID_18_)}.st32{fill:url(#SVGID_19_)}.st33{fill:url(#SVGID_20_)}.st34{fill:url(#SVGID_21_)}.st35{fill:url(#SVGID_22_)}.st36{fill:url(#SVGID_23_)}.st37{fill:url(#SVGID_24_)}.st38{fill:url(#SVGID_25_)}.st39{fill:url(#SVGID_26_)}.st40{fill:url(#SVGID_27_)}.st41{fill:url(#SVGID_28_)}.st42{fill:url(#SVGID_29_)}.st43{fill:url(#SVGID_30_)}.st44{fill:url(#SVGID_31_)}.st45{fill:url(#SVGID_32_)}.st46{fill:url(#SVGID_33_)}.st47{fill:url(#SVGID_34_)}.st48{fill:url(#SVGID_35_)}.st49{fill:url(#SVGID_36_)}.st50{fill:url(#SVGID_37_)}.st51{fill:url(#SVGID_38_)}.st52{fill:url(#SVGID_39_)}.st53{fill:url(#SVGID_40_)}.st54{fill:url(#SVGID_41_)}.st55{fill:url(#SVGID_42_)}.st56{fill:url(#SVGID_43_)}.st57{fill:url(#SVGID_44_)}.st58{fill:url(#SVGID_45_)}.st59{fill:#040404}.st60{fill:url(#SVGID_46_)}.st61{fill:url(#SVGID_47_)}.st62{fill:url(#SVGID_48_)}.st63{fill:url(#SVGID_49_)}.st64{fill:url(#SVGID_50_)}.st65{fill:url(#SVGID_51_)}.st66{fill:url(#SVGID_52_)}.st67{fill:url(#SVGID_53_)}.st68{fill:url(#SVGID_54_)}.st69{fill:url(#SVGID_55_)}.st70{fill:url(#SVGID_56_)}.st71{fill:url(#SVGID_57_)}.st72{fill:url(#SVGID_58_)}.st73{fill:url(#SVGID_59_)}.st74{fill:url(#SVGID_60_)}.st75{fill:url(#SVGID_61_)}.st76{fill:url(#SVGID_62_)}.st77,.st78{fill:none;stroke-miterlimit:10}.st77{stroke:#000;stroke-width:3}.st78{stroke:#fff}.st79{fill:#4bc9ff}.st80{fill:#50d}.st81{fill:#ff3a00}.st82{fill:#e6162d}.st83{fill:#f1f1f1}.st84{fill:#f93}.st85{fill:#b92b27}.st87{fill:#bd2125}.st88{fill:#1877f2}.st89{fill:#6665d2}.st90{fill:#ce3056}.st91{fill:#5bb381}.st92{fill:#61c3ec}.st93{fill:#e4b34b}.st94{fill:#181ef2}.st95{fill:red}.st96{fill:#fe466c}.st97{fill:#fa4778}.st98{fill:#f70}.st99{fill-rule:evenodd;clip-rule:evenodd;fill:#1f6bf6}.st100{fill:#520094}.st101{fill:#4477e8}.st102{fill:#3d1d1c}.st103{fill:#ffe812}.st104{fill:#344356}.st105{fill:#00cc76}.st106{fill-rule:evenodd;clip-rule:evenodd;fill:#345e90}.st107{fill:#1f65d8}.st108{fill:#eb3587}.st109{fill-rule:evenodd;clip-rule:evenodd;fill:#603a88}.st110{fill:#e3ce99}.st111{fill:#783af9}.st112{fill:#ff515e}.st113{fill:#ff4906}.st114{fill:#503227}.st115{fill:#4c7bd9}.st116{fill:#69c9d0}.st117{fill:#1b92d1}.st118{fill:#eb4f4a}.st119{fill:#513728}.st120{fill:#f60}.st121{fill-rule:evenodd;clip-rule:evenodd;fill:#b61438}.st122{fill:#fffc00}.st123{fill:#141414}.st124{fill:#94d137}.st125,.st126{fill-rule:evenodd;clip-rule:evenodd;fill:#f1f1f1}.st126{fill:#66e066}.st127{fill:#2d8cff}.st128{fill:#f1a300}.st129{fill:#4ba2f2}.st130{fill:#1a5099}.st131{fill:#ee6060}.st132{fill-rule:evenodd;clip-rule:evenodd;fill:#f48120}.st133{fill:#222}.st134{fill:url(#SVGID_63_)}.st135{fill:#0077b5}.st136{fill:#fc0}.st137{fill:#eb3352}.st138{fill:#f9d265}.st139{fill:#f5b955}.st140{fill:#dd2a7b}.st141{fill:#66e066}.st142{fill:#eb4e00}.st143{fill:#ffc794}.st144{fill:#b5332a}.st145{fill:#4e85eb}.st146{fill:#58a45c}.st147{fill:#f2bc42}.st148{fill:#d85040}.st149{fill:#464eb8}.st150{fill:#7b83eb}
+		</style>
+		<g id="Layer_1"/>
+		<path d="M96.421 21.122a38.02 38.02 0 0 1-10.941 3 19.079 19.079 0 0 0 8.373-10.537 38.18 38.18 0 0 1-12.098 4.624 19.015 19.015 0 0 0-13.901-6.017c-12.108-.162-21.417 11.667-18.552 23.385-15.829-.793-29.862-8.377-39.26-19.904-5.129 8.364-2.217 20.325 5.896 25.431-3.121-.1-6.06-.957-8.627-2.382-.119 9.305 6.482 17.161 15.279 18.914-2.703.754-5.817.872-8.602.328 2.425 7.566 9.459 13.076 17.793 13.229-7.535 6.021-18.084 9.16-28.201 7.888 40.682 25.037 85.655-7.765 83.333-48.101a38.762 38.762 0 0 0 9.508-9.858z" style="fill:#00aced" id="Layer_2"/>
+		</svg>
     </a>
     {{!-- Share on Linkedin --}}
     <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}"
@@ -37,9 +53,34 @@
         data-event-action="Linkedin"
         data-event-label="{{Tracking_name}} - Linkedin"
         data-event-non-interaction="true">
-        <svg width="30" height="30" class="fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M27 15a12 12 0 1 1-24 0 12 12 0 0 1 24 0zm-14.61 5v-7.42h-2.26V20h2.26zm-1.13-8.44c.79 0 1.28-.57 1.28-1.28-.02-.73-.5-1.28-1.26-1.28-.78 0-1.28.55-1.28 1.28 0 .71.49 1.28 1.25 1.28h.01zM15.88 20h-2.5s.04-6.5 0-7.17h2.5v1.02l-.02.02h.02v-.02a2.5 2.5 0 0 1 2.25-1.18c1.64 0 2.87 1.02 2.87 3.22V20h-2.5v-3.83c0-.97-.36-1.62-1.26-1.62-.69 0-1.1.44-1.28.87-.06.15-.08.36-.08.58v4z"/></svg>
+		<svg width="24" height="24" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+		<g/>
+		<path d="M90.479 2.513c-14.611-.041-68.502.028-80.958 0-3.876 0-7.021 3.049-7.021 6.804v81.381c0 3.756 3.145 6.802 7.021 6.802h80.958c3.878 0 7.021-3.046 7.021-6.803V9.317c0-3.755-3.143-6.804-7.021-6.804z" style="fill:#0077b5"/>
+		<path d="M53.453 82.005V58.126c-.139-4.388 2.484-8.483 7.762-8.667 5.143 0 7.201 3.921 7.201 9.67v22.875H82.63V57.485c0-13.135-7.012-19.247-16.365-19.247-7.668 0-11.036 4.285-12.907 7.204l.095-6.2H39.239c.185 4.012-.001 42.763-.001 42.763h14.215zM31.37 63.461v-24.22H17.154v42.763h14.217c-.003-4.49.005-14.116-.001-18.543zm-7.105-30.057c4.956 0 8.042-3.284 8.042-7.387-.041-9.897-16.004-9.787-15.991-.001-.011 4.135 3.16 7.439 7.949 7.388z" style="fill:#f1f1f1"/>
+		</svg>
     </a>
-
+    {{!-- Share on Facebook --}}
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="godo-tracking"
+        title="{{t "Share on"}} Facebook"
+        aria-label="{{t "Share on"}} Facebook"
+        data-event-category="Article"
+        data-event-action="Share"
+        data-event-label="{{Tracking_name}} - Facebook"
+        data-event-non-interaction="true">
+		<svg width="24" height="24" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+		<style>
+			.st0{fill:#fff}.st1{fill:#f5bb41}.st2{fill:#2167d1}.st3{fill:#3d84f3}.st4{fill:#4ca853}.st5{fill:#398039}.st6{fill:#d74f3f}.st7{fill:#d43c89}.st8{fill:#b2005f}.st9{stroke:#000}.st10,.st11,.st9{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st10{fill-rule:evenodd;clip-rule:evenodd;stroke:#000}.st11{stroke:#040404}.st11,.st12,.st13{fill-rule:evenodd;clip-rule:evenodd}.st13{fill:#040404}.st14{fill:url(#SVGID_1_)}.st15{fill:url(#SVGID_2_)}.st16{fill:url(#SVGID_3_)}.st17{fill:url(#SVGID_4_)}.st18{fill:url(#SVGID_5_)}.st19{fill:url(#SVGID_6_)}.st20{fill:url(#SVGID_7_)}.st21{fill:url(#SVGID_8_)}.st22{fill:url(#SVGID_9_)}.st23{fill:url(#SVGID_10_)}.st24{fill:url(#SVGID_11_)}.st25{fill:url(#SVGID_12_)}.st26{fill:url(#SVGID_13_)}.st27{fill:url(#SVGID_14_)}.st28{fill:url(#SVGID_15_)}.st29{fill:url(#SVGID_16_)}.st30{fill:url(#SVGID_17_)}.st31{fill:url(#SVGID_18_)}.st32{fill:url(#SVGID_19_)}.st33{fill:url(#SVGID_20_)}.st34{fill:url(#SVGID_21_)}.st35{fill:url(#SVGID_22_)}.st36{fill:url(#SVGID_23_)}.st37{fill:url(#SVGID_24_)}.st38{fill:url(#SVGID_25_)}.st39{fill:url(#SVGID_26_)}.st40{fill:url(#SVGID_27_)}.st41{fill:url(#SVGID_28_)}.st42{fill:url(#SVGID_29_)}.st43{fill:url(#SVGID_30_)}.st44{fill:url(#SVGID_31_)}.st45{fill:url(#SVGID_32_)}.st46{fill:url(#SVGID_33_)}.st47{fill:url(#SVGID_34_)}.st48{fill:url(#SVGID_35_)}.st49{fill:url(#SVGID_36_)}.st50{fill:url(#SVGID_37_)}.st51{fill:url(#SVGID_38_)}.st52{fill:url(#SVGID_39_)}.st53{fill:url(#SVGID_40_)}.st54{fill:url(#SVGID_41_)}.st55{fill:url(#SVGID_42_)}.st56{fill:url(#SVGID_43_)}.st57{fill:url(#SVGID_44_)}.st58{fill:url(#SVGID_45_)}.st59{fill:#040404}.st60{fill:url(#SVGID_46_)}.st61{fill:url(#SVGID_47_)}.st62{fill:url(#SVGID_48_)}.st63{fill:url(#SVGID_49_)}.st64{fill:url(#SVGID_50_)}.st65{fill:url(#SVGID_51_)}.st66{fill:url(#SVGID_52_)}.st67{fill:url(#SVGID_53_)}.st68{fill:url(#SVGID_54_)}.st69{fill:url(#SVGID_55_)}.st70{fill:url(#SVGID_56_)}.st71{fill:url(#SVGID_57_)}.st72{fill:url(#SVGID_58_)}.st73{fill:url(#SVGID_59_)}.st74{fill:url(#SVGID_60_)}.st75{fill:url(#SVGID_61_)}.st76{fill:url(#SVGID_62_)}.st77,.st78{fill:none;stroke-miterlimit:10}.st77{stroke:#000;stroke-width:3}.st78{stroke:#fff}.st79{fill:#4bc9ff}.st80{fill:#50d}.st81{fill:#ff3a00}.st82{fill:#e6162d}.st84{fill:#f93}.st85{fill:#b92b27}.st86{fill:#00aced}.st87{fill:#bd2125}.st89{fill:#6665d2}.st90{fill:#ce3056}.st91{fill:#5bb381}.st92{fill:#61c3ec}.st93{fill:#e4b34b}.st94{fill:#181ef2}.st95{fill:red}.st96{fill:#fe466c}.st97{fill:#fa4778}.st98{fill:#f70}.st99{fill-rule:evenodd;clip-rule:evenodd;fill:#1f6bf6}.st100{fill:#520094}.st101{fill:#4477e8}.st102{fill:#3d1d1c}.st103{fill:#ffe812}.st104{fill:#344356}.st105{fill:#00cc76}.st106{fill-rule:evenodd;clip-rule:evenodd;fill:#345e90}.st107{fill:#1f65d8}.st108{fill:#eb3587}.st109{fill-rule:evenodd;clip-rule:evenodd;fill:#603a88}.st110{fill:#e3ce99}.st111{fill:#783af9}.st112{fill:#ff515e}.st113{fill:#ff4906}.st114{fill:#503227}.st115{fill:#4c7bd9}.st116{fill:#69c9d0}.st117{fill:#1b92d1}.st118{fill:#eb4f4a}.st119{fill:#513728}.st120{fill:#f60}.st121{fill-rule:evenodd;clip-rule:evenodd;fill:#b61438}.st122{fill:#fffc00}.st123{fill:#141414}.st124{fill:#94d137}.st125,.st126{fill-rule:evenodd;clip-rule:evenodd;fill:#f1f1f1}.st126{fill:#66e066}.st127{fill:#2d8cff}.st128{fill:#f1a300}.st129{fill:#4ba2f2}.st130{fill:#1a5099}.st131{fill:#ee6060}.st132{fill-rule:evenodd;clip-rule:evenodd;fill:#f48120}.st133{fill:#222}.st134{fill:url(#SVGID_63_)}.st135{fill:#0077b5}.st136{fill:#fc0}.st137{fill:#eb3352}.st138{fill:#f9d265}.st139{fill:#f5b955}.st140{fill:#dd2a7b}.st141{fill:#66e066}.st142{fill:#eb4e00}.st143{fill:#ffc794}.st144{fill:#b5332a}.st145{fill:#4e85eb}.st146{fill:#58a45c}.st147{fill:#f2bc42}.st148{fill:#d85040}.st149{fill:#464eb8}.st150{fill:#7b83eb}
+		</style>
+		<g id="Layer_1"/>
+		<g id="Layer_2">
+			<path d="M50 2.5c-58.892 1.725-64.898 84.363-7.46 95h14.92c57.451-10.647 51.419-93.281-7.46-95z" style="fill:#1877f2"/>
+			<path d="M57.46 64.104h11.125l2.117-13.814H57.46v-8.965c0-3.779 1.85-7.463 7.781-7.463h6.021V22.101c-12.894-2.323-28.385-1.616-28.722 17.66V50.29H30.417v13.814H42.54V97.5h14.92V64.104z" style="fill:#f1f1f1"/>
+		</g>
+		</svg>
+    </a>
     {{!-- <a href="#"
         class="godo-tracking js-copy-link"
         title="{{t "Copy Link"}}"
@@ -54,11 +95,21 @@
         target="_blank"
         rel="noopener noreferrer"
         class="godo-tracking md:hidden"
-        aria-label="{{t "Share on"}} WhatSapp"
+        aria-label="{{t "Share on"}} WhatsApp"
         data-event-category="Article"
         data-event-action="Share"
         data-event-label="{{Tracking_name}} - Whatsapp"
         data-event-non-interaction="true">
-        <svg width="24" height="24" class="fill-current" viewBox="0 0 24 24"><path d="M19.077,4.928C17.191,3.041,14.683,2.001,12.011,2c-5.506,0-9.987,4.479-9.989,9.985 c-0.001,1.76,0.459,3.478,1.333,4.992L2,22l5.233-1.237c1.459,0.796,3.101,1.215,4.773,1.216h0.004 c5.505,0,9.986-4.48,9.989-9.985C22.001,9.325,20.963,6.816,19.077,4.928z M16.898,15.554c-0.208,0.583-1.227,1.145-1.685,1.186 c-0.458,0.042-0.887,0.207-2.995-0.624c-2.537-1-4.139-3.601-4.263-3.767c-0.125-0.167-1.019-1.353-1.019-2.581 S7.581,7.936,7.81,7.687c0.229-0.25,0.499-0.312,0.666-0.312c0.166,0,0.333,0,0.478,0.006c0.178,0.007,0.375,0.016,0.562,0.431 c0.222,0.494,0.707,1.728,0.769,1.853s0.104,0.271,0.021,0.437s-0.125,0.27-0.249,0.416c-0.125,0.146-0.262,0.325-0.374,0.437 c-0.125,0.124-0.255,0.26-0.11,0.509c0.146,0.25,0.646,1.067,1.388,1.728c0.954,0.85,1.757,1.113,2.007,1.239 c0.25,0.125,0.395,0.104,0.541-0.063c0.146-0.166,0.624-0.728,0.79-0.978s0.333-0.208,0.562-0.125s1.456,0.687,1.705,0.812 c0.25,0.125,0.416,0.187,0.478,0.291C17.106,14.471,17.106,14.971,16.898,15.554z"/></svg>
+		<svg width="24" height="24" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+		<style>
+			.st125{fill-rule:evenodd;clip-rule:evenodd;fill:#f1f1f1}
+		</style>
+		<g id="Layer_1"/>
+		<g id="Layer_2">
+			<path class="st125" d="M82.773 17.048c-38.434-37.321-98.728 8.848-72.606 55.645L3.622 96.589l24.455-6.412c46.787 24.737 91.578-35.212 54.696-73.129z"/>
+			<path d="M50.143 88.745c-7.593.027-14.974-2.253-21.34-6.295l-14.796 3.879 3.95-14.421c-4.438-6.577-6.941-14.291-6.907-22.275-.07-34.549 42.425-52.164 66.746-27.615 24.516 24.34 6.906 66.803-27.653 66.727z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#66e066"/>
+			<path class="st125" d="M71.585 59.476c-1.175-.588-6.953-3.431-8.03-3.823-1.077-.392-1.861-.588-2.644.589-.784 1.176-3.034 3.822-3.72 4.605-.685.785-1.371.883-2.546.295-2.539.339-15.564-10.676-15.988-13.97-.685-1.175-.073-1.812.516-2.398 1.023-1.123 2.318-2.535 2.937-4.018.392-.785.196-1.471-.098-2.059-.294-.588-2.578-6.4-3.623-8.723-.88-1.957-1.807-1.996-2.644-2.031-1.983.031-3.518-.484-5.386 1.443-7.004 6.741-3.792 16.214.685 21.955.587.784 8.13 13.028 20.075 17.738 9.927 3.915 11.947 3.136 14.102 2.94 2.155-.196 6.953-2.842 7.932-5.586.979-2.744.979-5.096.686-5.587-.295-.488-1.079-.782-2.254-1.37z"/>
+		</g>
+		</svg>
     </a>
 </aside>
