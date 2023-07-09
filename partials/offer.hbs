@@ -139,6 +139,84 @@
                 {{/foreach}}
             {{/get}} --}}
 
+			<div class="zoom plan-box plab-box-{{name}}
+			                    p-8 shadow-lg lg:col-span-4 bg-gray-100">
+				<header class="plan-box-header">
+					<h3 class="text-base font-semibold uppercase mb-2 text-title tracking-wide">Friends from India</h3>
+					<p class="text-gray-500">Live · Interactive</p>
+
+					<div class="text-3xl my-8 leading-none text-title">
+						<span class="font-semibold">$14.95</span>
+						<span class="text-base text-gray-500">one time</span>
+					</div>
+					{{!-- {{@member.email}} --}}
+					{{!-- <form method="POST" action="https://pay.cloudgenius.app/apps/3Qr4B6t3RDsJFknXs5YjRddY9tux/pos">
+						<input type="hidden" name="email" value={{@member.email}} />
+						<input type="hidden" name="orderId" value={{@member.uuid}} />
+						<input type="hidden" name="notificationUrl" value="https://thecloudseminar.com/callbacks" />
+						<input type="hidden" name="redirectUrl" value="https://thecloudseminar.com/thankyou" />
+						<button class="button is-primary mt-8" type="submit" name="choiceKey" value="Essential">Pay using
+							Bitcoin</button>
+					</form> --}}
+					{{! <a href="https://pay.cloudgenius.app/apps/3Qr4B6t3RDsJFknXs5YjRddY9tux/pos"
+						class="button is-primary mt-8">Pay using Bitcoin</a> }}
+					<a href="https://buy.stripe.com/bIY2aYbYv0Bc0pyfZ0?prefilled_email={{@member.email}}&client_reference_id={{@member.uuid}}"
+						class="button is-primary">Pay using Credit Card</a>
+					{{! https://stripe.com/docs/payments/payment-links#track-payments }}
+					{{! https://priceblocs.com/ }}
+					{{! <a href="javascript:" class="button is-primary mt-8" data-portal="signup">Get Started</a> }}
+				</header>
+
+				<div class="plan-box-body mt-8 leading-tight">
+					<ul>
+						<li class="flex self-start mb-2 items-center">
+							{{! <svg class="text-primary flex-none mr-2 icon">
+								<use xlink:href="#icon-checkmark"></use>
+							</svg> }}
+							<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+								class="mr-2 h-3 w-3 stroke-current" alt="">
+								<path d="M1 6.89286L6.10714 12L13.9643 1" stroke-width="2"></path>
+							</svg>
+							<span><b>1 year on-demand access</b></span>
+						</li>
+						<li class="flex self-start mb-2 items-center">&nbsp;</li>
+						<li class="flex self-start mb-2 items-center">
+							{{! <svg class="text-primary flex-none mr-2 icon">
+								<use xlink:href="#icon-checkmark"></use>
+							</svg> }}
+							{{! <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+								class="mr-2 h-3 w-3 stroke-current" alt="">
+								<path d="M1 6.89286L6.10714 12L13.9643 1" stroke-width="2"></path>
+							</svg> }}
+							<span>PLUS</span>
+						</li>
+						<li class="flex self-start mb-2 items-center">&nbsp;</li>
+						<li class="flex self-start mb-2 items-center">
+							{{! <svg class="text-primary flex-none mr-2 icon">
+								<use xlink:href="#icon-checkmark"></use>
+							</svg> }}
+							<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+								class="mr-2 h-3 w-3 stroke-current" alt="">
+								<path d="M1 6.89286L6.10714 12L13.9643 1" stroke-width="2"></path>
+							</svg>
+							<span>Live participation in scheduled Zoom sessions</span>
+						</li>
+						<li class="flex self-start mb-2 items-center">
+							{{! <svg class="text-primary flex-none mr-2 icon">
+								<use xlink:href="#icon-checkmark"></use>
+							</svg> }}
+							<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+								class="mr-2 h-3 w-3 stroke-current" alt="">
+								<path d="M1 6.89286L6.10714 12L13.9643 1" stroke-width="2"></path>
+							</svg>
+							<span>Access to recordings from the live Zoom
+								sessions</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
             <div
                 class="zoom plan-box plab-box-{{name}}
                     p-8 shadow-lg lg:col-span-4 bg-gray-100"
