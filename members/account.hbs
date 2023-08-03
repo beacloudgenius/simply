@@ -103,7 +103,7 @@
 
 {{!-- Logged in, not paying: Link to checkout --}}
 {{!-- <div class="p-vw6 px-4"> --}}
-    <div class="account-box mx-auto max-w-xl w-full text-center">
+    <div class="account-box mx-auto max-w-xl w-full text-left">
         <div class="subscriber-avatar w-32 h-32 relative rounded-full overflow-hidden mx-auto">
             {{#if @member.avatar_image}}
                 <img src="{{@member.avatar_image}}" class="image-inset" alt=""/>
@@ -111,11 +111,35 @@
 				<span class="absolute inset-0 text-gray-400">{{> "icons/avatar"}}</span>
             {{/if}}
         </div>
-        <h1 class="account-box-title text-3xl my-6 font-semibold">Currently, you're missing out.</h1>
+
+
+        {{!-- <h1 class="account-box-title text-3xl my-6 font-semibold">Currently, you're missing out.</h1>
         <p>Hey there! <strong>{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</strong>, you are receiving only the free updates from {{@site.title}}. You do not have a paid subscription to unlock full access.</p>
         <div class="authbox-signup mt-8">
             <a class="button is-primary is-medium" href="{{@site.url}}/signup/">Upgrade yourself</a>
-        </div>
+        </div> --}}
+
+		<h1 class="account-box-title text-3xl my-6 font-semibold">Thank you.</h1>
+		<p>Hey there! <strong>{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</strong>,
+		<br />
+		<br />
+		<ul>
+			<li>➡️ Begin with the Learning Roadmap</li>
+			<li>➡️ Create a login using the same email used for payment</li>
+			<li>➡️ Proceed with prework</li>
+			<li>➡️ Find stale recordings from last run</li>
+			<li>➡️ Access and proceed ahead</li>
+			<li>➡️ Do not wait for the live sessions start date</li>
+			<li>➡️ Seek help as needed.</li>
+		</ul>
+		</p>
+
+
+		<div class="authbox-signup mt-8">
+			<a class="button is-primary is-medium" href="https://cloudgenius.app/cloud-bootcamp/introduction/getting-started/intro">Learning Roadmap</a>
+		</div>
+		{{!-- href="{{@site.url}}/signup/" --}}
+
     </div>
 {{!-- </div> --}}
 
