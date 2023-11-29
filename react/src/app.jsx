@@ -53,8 +53,8 @@ if (document.getElementById("startdate")) {
 	const startdate = createRoot(document.getElementById('startdate'))
 		.render(
 			<Calendar
-				month="Sep"
-				date="11"
+				month="Jan"
+				date="8"
 				day="Monday"
 			/>
 		);
@@ -63,8 +63,8 @@ if (document.getElementById("enddate")) {
 	const enddate = createRoot(document.getElementById('enddate'))
 		.render(
 			<Calendar
-				month="Nov"
-				date="3"
+				month="Mar"
+				date="1"
 				day="Friday"
 			/>
 		);
