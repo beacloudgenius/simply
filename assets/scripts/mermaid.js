@@ -1,6 +1,6 @@
 /*!
  * simply v0.4.0
- * Copyright 2023 Nilesh <hello@cloudgeni.us> (https://github.com/beacloudgenius/simply)
+ * Copyright 2024 Nilesh <hello@cloudgeni.us> (https://github.com/beacloudgenius/simply)
  * Licensed under GPL-3.0-or-later
  */!function i(r,a,o){function s(e,t){if(!a[e]){if(!r[e]){var n="function"==typeof require&&require;if(!t&&n)return n(e,!0);if(c)return c(e,!0);throw(t=new Error("Cannot find module '"+e+"'")).code="MODULE_NOT_FOUND",t}n=a[e]={exports:{}},r[e][0].call(n.exports,function(t){return s(r[e][1][t]||t)},n,n.exports,i,r,a,o)}return a[e].exports}for(var c="function"==typeof require&&require,t=0;t<o.length;t++)s(o[t]);return s}({1:[function(t,e,n){e.exports=function(t){return t&&t.__esModule?t:{default:t}},e.exports.__esModule=!0,e.exports.default=e.exports},{}],2:[function(HN,UN,YN){!function($N,zN){!function(){var t,e;t=this,e=function(){"use strict";var L,N=Object.defineProperty,P=(t,e,n)=>{return i=n,(e="symbol"!=typeof e?e+"":e)in(t=t)?N(t,e,{enumerable:!0,configurable:!0,writable:!0,value:i}):t[e]=i,n;var i};function B(t){for(var e=[],n=1;n<arguments.length;n++)e[n-1]=arguments[n];var i,r=Array.from("string"==typeof t?[t]:t),t=(r[r.length-1]=r[r.length-1].replace(/\r?\n([\t ]*)$/,""),r.reduce(function(t,e){e=e.match(/\n([\t ]+|(?!\s).)/g);return e?t.concat(e.map(function(t){return null!=(t=null==(t=t.match(/[\t ]/g))?void 0:t.length)?t:0})):t},[])),a=(t.length&&(i=new RegExp(`
 [	 ]{`+Math.min.apply(Math,t)+"}","g"),r=r.map(function(t){return t.replace(i,`
