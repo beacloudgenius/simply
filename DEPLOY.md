@@ -1,1 +1,1 @@
-npm run deploy-to-production
+yarn deploy-to-production
