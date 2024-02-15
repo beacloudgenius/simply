@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import { createRoot } from 'react-dom/client'
 
-
 /// BULMA NAVBAR
 // import './app.scss';
 // import { Navbar } from "./components/Navbar.jsx"
 // const nnn = createRoot(document.getElementById('nnn')).render(<Navbar />);
-
 
 /// KATHERINE
 // import Katherine from './components/Katherine';
@@ -18,56 +16,44 @@ import { createRoot } from 'react-dom/client'
 // import Aklilu from './components/Aklilu';
 // const dood = createRoot(document.getElementById('Aklilu')).render(<Aklilu />);
 
-import RotatingLogo from "./components/RotatingLogo.jsx"
+import RotatingLogo from './components/RotatingLogo.jsx'
 
-if (document.getElementById("lolo")) {
-	const lolo = createRoot(document.getElementById('lolo'))
-		.render(
-			<RotatingLogo
-				style={{
-					height: 50,
-					width: 50,
-					display: "inline-block"
-				}}
-				logoUrl="https://s3-us-west-2.amazonaws.com/tcs-ghost/logo.svg"
-			/>
-		);
+if (document.getElementById('lolo')) {
+  const lolo = createRoot(document.getElementById('lolo')).render(
+    <RotatingLogo
+      style={{
+        height: 50,
+        width: 50,
+        display: 'inline-block'
+      }}
+      logoUrl='https://i.thecloudseminar.com/logo.svg'
+    />
+  )
 }
-if (document.getElementById("logo")) {
-	const logo = createRoot(document.getElementById('logo'))
-		.render(
-			<RotatingLogo
-				style={{
-					height: 15,
-					width: 15,
-					display: "inline-block"
-				}}
-				logoUrl="https://s3-us-west-2.amazonaws.com/tcs-ghost/logo.svg"
-			/>
-		);
+if (document.getElementById('logo')) {
+  const logo = createRoot(document.getElementById('logo')).render(
+    <RotatingLogo
+      style={{
+        height: 15,
+        width: 15,
+        display: 'inline-block'
+      }}
+      logoUrl='https://i.thecloudseminar.com/logo.svg'
+    />
+  )
 }
 
-import Calendar from "./components/calendar.js"
+import Calendar from './components/calendar.js'
 
-if (document.getElementById("startdate")) {
-	const startdate = createRoot(document.getElementById('startdate'))
-		.render(
-			<Calendar
-				month="Jan"
-				date="8"
-				day="Monday"
-			/>
-		);
+if (document.getElementById('startdate')) {
+  const startdate = createRoot(document.getElementById('startdate')).render(
+    <Calendar month='Mar' date='11' day='Monday' />
+  )
 }
-if (document.getElementById("enddate")) {
-	const enddate = createRoot(document.getElementById('enddate'))
-		.render(
-			<Calendar
-				month="Mar"
-				date="1"
-				day="Friday"
-			/>
-		);
+if (document.getElementById('enddate')) {
+  const enddate = createRoot(document.getElementById('enddate')).render(
+    <Calendar month='May' date='3' day='Friday' />
+  )
 }
 
 // import Swoosh from "./components/swoosh.js"
@@ -76,21 +62,14 @@ if (document.getElementById("enddate")) {
 // 		<Swoosh />
 // 	);
 
-import Ishtyle from "./components/ishtyle.js"
+import Ishtyle from './components/ishtyle.js'
 
-if (document.getElementById("swooshid")) {
-
-	const swoosh = createRoot(document.getElementById('swooshid'))
-		.render(
-			<Ishtyle />
-		);
+if (document.getElementById('swooshid')) {
+  const swoosh = createRoot(document.getElementById('swooshid')).render(<Ishtyle />)
 }
 
-import Handwritten from "./components/handwritten.js"
+import Handwritten from './components/handwritten.js'
 
-if (document.getElementById("handwritten")) {
-	const handwritten = createRoot(document.getElementById('handwritten'))
-		.render(
-			<Handwritten />
-		);
+if (document.getElementById('handwritten')) {
+  const handwritten = createRoot(document.getElementById('handwritten')).render(<Handwritten />)
 }
