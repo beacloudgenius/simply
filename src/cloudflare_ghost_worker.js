@@ -49,6 +49,7 @@ async function handleRequest(request) {
             default-src 'self' *.thecloudseminar.com ghost.org/changelog.json ghost.org/explore/api/feed/ resources.ghost.io/resources/ghost/api/content/posts/ cdn.jsdelivr.net tcs-ghost.s3.us-west-2.amazonaws.com tenor.googleapis.com api.unsplash.com;  \
             font-src 'self' *.gstatic.com *.thecloudseminar.com ; \
             frame-src 'self' beacloudgenius-my.sharepoint.com lu.ma *.thecloudseminar.com js.stripe.com ghost.org/explore/ calendly.com platform.twitter.com player.vimeo.com www.youtube.com chat.chatra.io; \
+            connect-src 'self' https://supa.home.cloudgeni.us; \
             ",
 		// report-uri https://cloudgenius.report-uri.com;
 		// https://securityheaders.com/
