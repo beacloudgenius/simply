@@ -47,12 +47,12 @@ import Calendar from './components/calendar.js'
 
 if (document.getElementById('startdate')) {
   const startdate = createRoot(document.getElementById('startdate')).render(
-    <Calendar month='Mar' date='11' day='Monday' />
+    <Calendar month='Jun' date='3' day='Monday' />
   )
 }
 if (document.getElementById('enddate')) {
   const enddate = createRoot(document.getElementById('enddate')).render(
-    <Calendar month='May' date='3' day='Friday' />
+    <Calendar month='Jul' date='26' day='Friday' />
   )
 }
 
